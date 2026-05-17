@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Louis</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; transition: 0.3s; }
+        .lang-en { display: none; } /* Cache l'anglais par défaut */
+        button { padding: 10px 20px; cursor: pointer; border-radius: 5px; border: 1px solid #ccc; background: #f0f0f0; }
+        button:hover { background: #e0e0e0; }
+    </style>
+</head>
+<body>
+
+    <button onclick="toggleLanguage()" id="langBtn">Translate to English</button>
+
+    <header>
+        <h1 class="lang-fr">Bienvenue sur mon Portfolio</h1>
+        <h1 class="lang-en">Welcome to my Portfolio</h1>
+        
+        <p class="lang-fr">Je m'appelle Louis, <strong>étudiant en 1ère année de BUT GEII</strong>.</p>
+        <p class="lang-en">My name is Louis, <strong>1st year student in BUT GEII</strong> (Electrical Engineering).</p>
+    </header>
+    
+    <section>
+        <h2 class="lang-fr">À propos de moi</h2>
+        <h2 class="lang-en">About me</h2>
+        <p class="lang-fr">Passionné par l'électronique et l'informatique industrielle.</p>
+        <p class="lang-en">Passionate about electronics and industrial computing.</p>
+    </section>
+
+    <footer>
+        <p>© 2026 - Louis</p>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const frElements = document.querySelectorAll('.lang-fr');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.getElementById('langBtn');
+
+            if (frElements[0].style.display === 'none') {
+                // Passer au français
+                frElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+                btn.innerText = "Translate to English";
+            } else {
+                // Passer à l'anglais
+                frElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                btn.innerText = "Traduire en Français";
+            }
+        }
+    </script>
+</body>
+</html>
