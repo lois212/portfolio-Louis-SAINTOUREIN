@@ -3,162 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis - Portfolio</title>
+    <title>Louis SAINTOUREIN - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* --- VARIABLES DE COULEURS --- */
         :root {
-            --bg-color: #000000;
-            --text-color: #ffffff;
-            --accent-color: #f6e05e; /* Le jaune de l'image */
+            --bg: #DCDFDA;
+            --accent: #C8D6A2;
+            --text: #333;
+            --card-bg: #fff;
         }
 
+        [data-theme="dark"] {
+            --bg: #4B5943;
+            --accent: #DCDFDA;
+            --text: #DCDFDA;
+            --card-bg: #3d4a37;
+        }
+
+        /* --- STYLE GLOBAL --- */
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg);
+            color: var(--text);
             font-family: 'Urbanist', sans-serif;
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            transition: 0.3s ease;
         }
 
-        /* --- BARRE DE NAVIGATION --- */
         header {
-            width: 100%;
-            max-width: 1200px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            padding: 20px;
+            padding: 20px 50px;
+            gap: 25px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 1000;
         }
 
-        .logo {
-            font-weight: 700;
-            font-size: 24px;
-        }
-        .logo span { color: var(--accent-color); }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: white;
+        nav a, .theme-toggle {
             text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* --- BOUTONS SPECIAUX --- */
-        .btn-contact {
-            background-color: var(--accent-color);
-            color: black;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
+            color: var(--text);
             font-weight: 700;
-            transition: 0.3s;
-        }
-        .btn-contact:hover { opacity: 0.8; }
-
-        #translate-btn {
-            background: #222;
-            color: white;
-            border: 1px solid #444;
-            padding: 5px 12px;
-            border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 18px;
         }
 
-        /* --- SECTION HERO (MILIEU) --- */
-        .hero {
-            text-align: center;
-            margin-top: 15vh;
-            max-width: 900px;
+        .theme-toggle { background: none; border: none; font-size: 22px; }
+
+        section {
+            display: none; /* Cache les pages par défaut */
+            padding: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s ease;
         }
 
-        .hero h1 {
-            font-size: 60px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
+        section.active { display: block; } /* Affiche la page active */
 
-        .highlight {
-            background-color: white;
-            color: black;
-            padding: 5px 20px;
-            display: inline-block;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .btn-work {
+        /* --- ACCUEIL --- */
+        .hero { text-align: center; margin-top: 100px; }
+        .hero h1 { font-size: 55px; line-height: 1.2; }
+        .highlight { background: var(--accent); color: #4B5943; padding: 5px 15px; border-radius: 10px; }
+        
+        .btn-main {
             margin-top: 40px;
             display: inline-block;
-            background-color: #1a1a1a;
-            color: white;
+            background: var(--text);
+            color: var(--bg);
             padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
-            border: 1px solid #333;
+            font-weight: 700;
         }
 
-        /* --- GESTION TRADUCTION --- */
-        .lang-en { display: none; }
+        /* --- PROJETS --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img { width: 100%; height: 200px; object-fit: cover; background: #ccc; }
+
+        .card-content { padding: 20px; }
+
+        /* --- PARCOURS (FRISE) --- */
+        .timeline {
+            border-left: 4px solid var(--accent);
+            margin: 50px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .timeline-item { margin-bottom: 50px; position: relative; }
+
+        .timeline-item::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border: 4px solid var(--bg);
+            border-radius: 50%;
+            position: absolute;
+            left: -46px;
+            top: 5px;
+        }
+
+        .timeline-date { font-weight: 700; color: var(--accent); font-size: 20px; }
     </style>
 </head>
-<body>
+<body data-theme="light">
 
     <header>
-        <div class="logo">Louis<span>.</span></div>
-        
-        <nav class="nav-links">
-            <button id="translate-btn" onclick="toggleLanguage()">EN</button>
-            
-            <a href="#" class="lang-fr">Accueil</a>
-            <a href="#" class="lang-en">Home</a>
-            
-            <a href="#" class="lang-fr">Parcours</a>
-            <a href="#" class="lang-en">Career</a>
-            
-            <a href="#" class="lang-fr">Projets</a>
-            <a href="#" class="lang-en">Projects</a>
-
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=l.saintoureinpro@gmail.com" target="_blank" class="btn-contact">
-                <span class="lang-fr">Me contacter</span>
-                <span class="lang-en">Contact me</span>
-            </a>
+        <nav>
+            <a onclick="showPage('home')">Accueil</a>
+            <a onclick="showPage('parcours')">Parcours</a>
+            <a onclick="showPage('projets')">Projets</a>
         </nav>
+        <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
     </header>
 
-    <main class="hero">
-        <h1 class="lang-fr">Bonjour, je suis <br> <span class="highlight">étudiant en 1ère année de BUT GEII</span></h1>
-        <h1 class="lang-en">Hello, I am <br> <span class="highlight">1st year student in BUT GEII</span></h1>
+    <section id="home" class="active">
+        <div class="hero">
+            <h1>Bonjour, je suis <br>Louis <span class="highlight">SAINTOUREIN</span></h1>
+            <p style="font-size: 24px;">Étudiant en 1ère année de BUT GEII</p>
+            <a onclick="showPage('projets')" class="btn-main">Mes projets</a>
+        </div>
+    </section>
 
-        <a href="#" class="btn-work">
-            <span class="lang-fr">Voir mon travail</span>
-            <span class="lang-en">See my work</span>
-        </a>
-    </main>
+    <section id="projets">
+        <h1>Mes Projets</h1>
+        <div class="project-grid">
+            <div class="card">
+                <img src="images/rafale.jpg" alt="Système Rafale">
+                <div class="card-content">
+                    <h3>Système Sonore et Lumineux</h3>
+                    <p>Pour Rafale miniature. Gestion de l'électronique embarquée.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/thermo.jpg" alt="Thermomètre">
+                <div class="card-content">
+                    <h3>Thermomètre de Bain</h3>
+                    <p>Conçu pour bébé. Capteur de température précis et affichage LCD.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/kart.jpg" alt="Kart à hélice">
+                <div class="card-content">
+                    <h3>Kart à Hélice</h3>
+                    <p>Projet de propulsion mécanique par hélice aérienne.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/main.jpg" alt="Main Robotique">
+                <div class="card-content">
+                    <h3>Main Robotique</h3>
+                    <p>Projet en DU Santé. Prothèse articulée et contrôlée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="parcours">
+        <h1>Mon Parcours</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2025 - Aujourd'hui</div>
+                <h3>1ère année de BUT GEII</h3>
+                <p>IUT de Bordeaux / Gradignan. Spécialisation Électricité et Informatique Industrielle.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Fin 2025</div>
+                <h3>Bac Général</h3>
+                <p>Spécialité Mathématiques et Physique.</p>
+            </div>
+        </div>
+    </section>
 
     <script>
-        function toggleLanguage() {
-            const frElements = document.querySelectorAll('.lang-fr');
-            const enElements = document.querySelectorAll('.lang-en');
-            const btn = document.getElementById('translate-btn');
+        // Fonction pour changer de page
+        function showPage(pageId) {
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0,0);
+        }
 
-            if (btn.innerText === "EN") {
-                frElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'inline-block');
-                btn.innerText = "FR";
+        // Fonction Mode Sombre
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.querySelector('.theme-toggle i');
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
             } else {
-                frElements.forEach(el => el.style.display = 'inline-block');
-                enElements.forEach(el => el.style.display = 'none');
-                btn.innerText = "EN";
+                body.setAttribute('data-theme', 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
             }
         }
     </script>
