@@ -4,139 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Louis SAINTOUREIN - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* --- CHANGER COULEURS / DESIGN SYSTEM --- */
+        /* --- DESIGN SYSTEM MODERNE & TECH --- */
         :root {
-            --bg: #DCDFDA;
-            --accent: #C8D6A2;
-            --accent-text: #2c3528;
-            --text: #2c3528;
-            --card-bg: #ffffff;
-            --modal-overlay: rgba(0, 0, 0, 0.4);
-            --timeline-line: #b2be90;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent: #e0f2fe;
+            --accent-text: #0369a1;
+            --border: #e2e8f0;
+            --modal-overlay: rgba(15, 23, 42, 0.3);
+            --shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 8px -1px rgba(15, 23, 42, 0.03);
         }
 
         [data-theme="dark"] {
-            --bg: #3d4a37;
-            --accent: #C8D6A2;
-            --accent-text: #2c3528;
-            --text: #F3F4F2;
-            --card-bg: #293225;
-            --modal-overlay: rgba(0, 0, 0, 0.75);
-            --timeline-line: #C8D6A2;
+            --bg: #0b0f19;
+            --surface: #131c2e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #60a5fa;
+            --accent: #1e293b;
+            --accent-text: #38bdf8;
+            --border: #1e293b;
+            --modal-overlay: rgba(0, 0, 0, 0.6);
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
 
-        * { box-sizing: border-box; }
+        * { 
+            box-sizing: border-box; 
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
         body {
             background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Urbanist', sans-serif;
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
-            transition: background 0.3s ease, color 0.3s ease;
+            padding-bottom: 60px;
         }
 
-        /* --- BARRE DE NAVIGATION --- */
+        /* --- NAVIGATION PREMIUM --- */
         header {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            gap: 20px;
+            padding: 20px 8%;
             position: sticky;
             top: 0;
-            background: var(--bg);
+            background: rgba(248, 250, 252, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             z-index: 100;
-            transition: background 0.3s ease;
+            border-bottom: 1px solid var(--border);
         }
 
-        nav { display: flex; gap: 20px; }
+        [data-theme="dark"] header {
+            background: rgba(11, 15, 25, 0.8);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        nav { display: flex; align-items: center; gap: 28px; }
         nav a {
             text-decoration: none;
-            color: var(--text);
-            font-weight: 700;
-            font-size: 16px;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 15px;
             cursor: pointer;
-            transition: 0.2s;
+            position: relative;
         }
-        nav a:hover { opacity: 0.7; }
+        nav a:hover { color: var(--text-main); }
+        
+        /* Bouton Spécifique pour le CV */
+        .btn-cv {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary) !important;
+        }
+        .btn-cv:hover { opacity: 0.8; }
 
-        .header-btns { display: flex; align-items: center; gap: 15px; }
+        .header-btns { display: flex; align-items: center; gap: 12px; }
         .btn-lang, .theme-toggle {
-            background: var(--text);
-            color: var(--bg);
-            border: none;
-            padding: 6px 12px;
-            border-radius: 20px;
+            background: var(--surface);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 8px 14px;
+            border-radius: 10px;
             cursor: pointer;
             font-weight: 700;
-            font-family: 'Urbanist', sans-serif;
-            transition: background 0.3s ease, color 0.3s ease;
+            font-family: inherit;
+            box-shadow: var(--shadow);
         }
-        .theme-toggle { font-size: 16px; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; }
+        .theme-toggle { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 38px; 
+            height: 38px; 
+            border-radius: 10px; 
+        }
 
         .btn-contact {
-            background-color: var(--accent);
-            color: var(--accent-text) !important;
-            padding: 6px 15px;
-            border-radius: 20px;
+            background-color: var(--text-main);
+            color: var(--bg) !important;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
         }
 
-        /* --- SECTIONS PRINCIPALES --- */
+        /* --- SECTIONS --- */
         section {
             display: none;
-            padding: 60px 20px;
-            max-width: 1100px;
+            padding: 80px 20px;
+            max-width: 1000px;
             margin: 0 auto;
-            animation: fadeIn 0.4s ease forwards;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         section.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        h1 { font-size: 42px; margin-bottom: 20px; }
+        h1 { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin-bottom: 30px; }
 
-        /* --- ACCUEIL --- */
-        .hero { text-align: center; margin-top: 12vh; }
-        .hero h1 { font-size: 58px; font-weight: 700; line-height: 1.2; }
-        .highlight { background: var(--accent); color: var(--accent-text); padding: 4px 16px; border-radius: 12px; display: inline-block; }
-        .hero p { font-size: 22px; margin-top: 20px; opacity: 0.9; }
+        /* --- HERO DECORATION --- */
+        .hero { text-align: left; margin-top: 15vh; max-width: 700px; }
+        .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
+        .highlight { color: var(--primary); }
+        .hero p { font-size: 20px; color: var(--text-muted); line-height: 1.6; margin-bottom: 36px; }
+        
         .btn-main {
-            margin-top: 35px;
-            display: inline-block;
-            background: var(--text);
-            color: var(--bg);
-            padding: 14px 32px;
-            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
             cursor: pointer;
-            transition: 0.2s;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
         }
-        .btn-main:hover { transform: scale(1.03); }
+        .btn-main:hover { background: var(--primary-hover); transform: translateY(-2px); }
 
-        /* --- PROJECT GRID --- */
+        /* --- GRILLE DE PROJETS MODERNE --- */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         .card {
-            background: var(--card-bg);
+            background: var(--surface);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
             cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
         }
-        .card:hover { transform: translateY(-8px); }
-        .card img { width: 100%; height: 180px; object-fit: cover; background: #bbb; }
-        .card-content { padding: 20px; }
-        .card-content h3 { margin: 0 0 10px 0; font-size: 20px; }
-        .card-content p { margin: 0; font-size: 14px; opacity: 0.8; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border); }
+        .card-content { padding: 24px; }
+        .card-content h3 { margin: 0 0 10px 0; font-size: 20px; font-weight: 700; }
+        .card-content p { margin: 0; font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 
-        /* --- FENÊTRES MODALES (DÉTAILS PROJETS) --- */
+        /* --- FENÊTRES MODALES PUR ÉPURÉ --- */
         .modal {
             display: none;
             position: fixed;
@@ -146,108 +188,110 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            backdrop-filter: blur(4px);
         }
         .modal-content {
-            background: var(--card-bg);
-            color: var(--text);
-            max-width: 850px;
+            background: var(--surface);
+            color: var(--text-main);
+            max-width: 760px;
             width: 100%;
             max-height: 85vh;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow-y: auto;
             padding: 40px;
             position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            transition: background 0.3s ease, color 0.3s ease;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
         }
         .close-modal {
             position: absolute;
-            top: 20px; right: 25px;
-            font-size: 30px; cursor: pointer;
-            background: none; border: none; color: var(--text);
+            top: 25px; right: 25px;
+            font-size: 24px; cursor: pointer;
+            background: var(--bg); border: 1px solid var(--border); 
+            color: var(--text-main); width: 36px; height: 36px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
         }
-        .modal h2 { margin-top: 0; color: var(--text); border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
-        .modal h3 { margin-top: 25px; font-size: 20px; }
-        .modal-images { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
-        .modal-images img { width: 100%; height: 220px; object-fit: contain; border-radius: 8px; background: rgba(0,0,0,0.03); padding: 5px; }
+        .modal h2 { margin-top: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
+        .modal h3 { margin-top: 35px; font-size: 18px; font-weight: 700; color: var(--text-main); }
+        .modal-images { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 24px 0; }
+        .modal-images img { width: 100%; height: 200px; object-fit: contain; border-radius: 12px; background: var(--bg); border: 1px solid var(--border); }
         
         .req-list { list-style: none; padding: 0; }
-        .req-list li { margin-bottom: 12px; padding-left: 20px; position: relative; font-size: 15px; line-height: 1.5; }
-        .req-list li::before { content: "►"; color: var(--accent); position: absolute; left: 0; font-size: 12px; top: 3px; }
+        .req-list li { margin-bottom: 12px; padding-left: 22px; position: relative; font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        .req-list li::before { content: "→"; color: var(--primary); position: absolute; left: 0; font-weight: 700; }
 
-        /* --- NOUVELLE FRISE CHRONOLOGIQUE VERTICALE POUR LES MODALES --- */
+        /* --- FRISE CHRONOLOGIQUE VERTICALE COLOREE --- */
         .modal-timeline {
             position: relative;
-            margin: 30px 0 30px 20px;
+            margin: 30px 0 30px 15px;
             padding: 0;
             list-style: none;
         }
-        /* Ligne verticale centrale */
         .modal-timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 20px;
-            width: 3px;
-            background-color: var(--timeline-line);
+            content: ''; position: absolute; top: 0; bottom: 0; left: 18px; width: 2px;
+            background-color: var(--border);
         }
         .modal-timeline li {
             position: relative;
             margin-bottom: 25px;
             padding-left: 55px;
-            min-height: 40px;
+            min-height: 38px;
         }
         .modal-timeline li:last-child { margin-bottom: 0; }
         
         .modal-timeline .step-badge {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 42px;
-            height: 42px;
-            font-weight: 700;
-            color: var(--accent-text);
-            background: var(--accent);
-            border: 3px solid var(--card-bg);
-            border-radius: 50%;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-            transition: border-color 0.3s ease;
+            position: absolute; left: 0; top: 0; width: 36px; height: 36px;
+            font-weight: 700; color: #fff; border-radius: 10px; font-size: 12px;
+            display: flex; align-items: center; justify-content: center; z-index: 2;
         }
+        
+        /* Nuances issues du nouveau design system ou calquées sur l'exemple historique */
+        .timeline-launch { background-color: #10b981; } 
+        .timeline-study { background-color: #3b82f6; } 
+        .timeline-design { background-color: #ef4444; } 
+        .timeline-build { background-color: #f59e0b; } 
+
         .modal-timeline .step-text {
-            font-size: 15px;
-            line-height: 1.5;
-            padding-top: 8px;
+            font-size: 14px; color: var(--text-muted); line-height: 1.5; padding-top: 6px;
         }
 
-        /* --- FRISE CHRONOLOGIQUE PARCOURS --- */
-        .timeline { border-left: 4px solid var(--accent); margin: 40px 0 40px 20px; padding-left: 30px; }
+        /* --- FIL CHRONOLOGIQUE PARCOURS --- */
+        .timeline { border-left: 2px solid var(--border); margin: 40px 0 40px 20px; padding-left: 30px; }
         .timeline-item { margin-bottom: 40px; position: relative; }
         .timeline-item::before {
-            content: ""; width: 16px; height: 16px; background: var(--accent);
-            border: 4px solid var(--bg); border-radius: 50%;
-            position: absolute; left: -44px; top: 6px;
-            transition: border-color 0.3s ease;
+            content: ""; width: 12px; height: 12px; background: var(--bg);
+            border: 3px solid var(--primary); border-radius: 50%;
+            position: absolute; left: -39px; top: 6px;
         }
-        .timeline-date { font-weight: 700; font-size: 20px; margin-bottom: 5px; }
+        .timeline-date { font-weight: 700; font-size: 16px; color: var(--primary); margin-bottom: 6px; }
+        .timeline-item h3 { margin: 0 0 8px 0; font-size: 20px; font-weight: 700; }
+        .timeline-item p { margin: 0; color: var(--text-muted); font-size: 15px; line-height: 1.5; }
 
-        /* --- TRADUCTION --- */
+        /* --- TRADUCTION & RESPONSIVE --- */
         .lang-en { display: none; }
+        
+        @media(max-width: 768px) {
+            header { padding: 20px 4%; }
+            nav { gap: 15px; }
+            .hero h1 { font-size: 40px; }
+            .modal-content { padding: 24px; }
+            .modal-images { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="logo">Louis S.</div>
         <nav>
             <a onclick="showPage('home')"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
             <a onclick="showPage('parcours')"><span class="lang-fr">Parcours</span><span class="lang-en">Resume</span></a>
             <a onclick="showPage('projets')"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=TON_EMAIL@GMAIL.COM" target="_blank" class="btn-contact"><span class="lang-fr">Me contacter</span><span class="lang-en">Contact me</span></a>
+            <a href="CV_Louis_SAINTOUREIN.pdf" target="_blank" class="btn-cv">
+                <i class="fa-regular fa-file-pdf"></i>
+                <span class="lang-fr">Mon CV</span><span class="lang-en">My CV</span>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=TON_EMAIL@GMAIL.COM" target="_blank" class="btn-contact"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a>
         </nav>
         <div class="header-btns">
             <button class="btn-lang" id="lang-btn" onclick="toggleLanguage()">EN</button>
@@ -257,18 +301,18 @@
 
     <section id="home" class="active">
         <div class="hero">
-            <h1 class="lang-fr">je suis <br>Louis <span class="highlight">SAINTOUREIN</span></h1>
-            <h1 class="lang-en">Hello, I am <br>Louis <span class="highlight">SAINTOUREIN</span></h1>
+            <h1 class="lang-fr">Concevoir le futur de l'électronique : Je suis <span class="highlight">Louis SAINTOUREIN</span></h1>
+            <h1 class="lang-en">Designing the future of electronics: I am <span class="highlight">Louis SAINTOUREIN</span></h1>
             
-            <p class="lang-fr">Étudiant en 1ère année de BUT GEII</p>
-            <p class="lang-en">1st year student in Electrical Engineering & Industrial Computer Science (BUT GEII)</p>
+            <p class="lang-fr">Étudiant passionné en 1ère année de BUT GEII à l'IUT de Bordeaux, spécialisé dans les systèmes embarqués et l'informatique industrielle.</p>
+            <p class="lang-en">Passionate 1st year student in Electrical Engineering & Industrial Computer Science (BUT GEII) at Bordeaux Institute of Technology.</p>
             
-            <a onclick="showPage('projets')" class="btn-main"><span class="lang-fr">Mes projets</span><span class="lang-en">My projects</span></a>
+            <a onclick="showPage('projets')" class="btn-main"><span class="lang-fr">Découvrir mes travaux</span><span class="lang-en">View my work</span></a>
         </div>
     </section>
 
     <section id="projets">
-        <h1><span class="lang-fr">Mes Projets</span><span class="lang-en">My Projects</span></h1>
+        <h1><span class="lang-fr">Projets Sélectionnés</span><span class="lang-en">Selected Projects</span></h1>
         <div class="project-grid">
             <div class="card" onclick="openModal('modal-rafale')">
                 <img src="images/carte rafale.png" alt="Rafale">
@@ -298,7 +342,7 @@
                 <img src="images/image.gitkeep" alt="Main Robotique">
                 <div class="card-content">
                     <h3>Main Robotique (DU Santé)</h3>
-                    <p class="lang-fr">Développement d'une prothèse articulée motorisée.</p>
+                    <p class="lang-fr">Développement d'une prothèse prothétique articulée motorisée.</p>
                     <p class="lang-en">Development of an articulated motorized prosthesis.</p>
                 </div>
             </div>
@@ -306,18 +350,18 @@
     </section>
 
     <section id="parcours">
-        <h1><span class="lang-fr">Mon Parcours</span><span class="lang-en">My Career</span></h1>
+        <h1><span class="lang-fr">Cursus Académique</span><span class="lang-en">Education</span></h1>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-date">2025 - Aujourd'hui</div>
                 <h3><span class="lang-fr">1ère année de BUT GEII</span><span class="lang-en">1st Year - BUT GEII Degree</span></h3>
-                <p class="lang-fr">IUT de Bordeaux / Gradignan. Apprentissage de l'électronique, automatisme et informatique industrielle.</p>
+                <p class="lang-fr">IUT de Bordeaux / Gradignan. Automatismes, électronique de puissance, et développement informatique industriel.</p>
                 <p class="lang-en">Bordeaux/Gradignan Institute of Technology. Learning electronics, automation and industrial computing.</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date"><span class="lang-fr">Fin 2025</span><span class="lang-en">Late 2025</span></div>
-                <h3><span class="lang-fr">Bac Général</span><span class="lang-en">General Baccalaureate</span></h3>
-                <p class="lang-fr">Spécialités : Mathématiques et Physique.</p>
+                <h3><span class="lang-fr">Baccalauréat Général</span><span class="lang-en">General Baccalaureate</span></h3>
+                <p class="lang-fr">Obtention des spécialités Sciences Physiques et Mathématiques.</p>
                 <p class="lang-en">Specialties: Mathematics and Physics.</p>
             </div>
         </div>
@@ -343,13 +387,13 @@
             </ul>
             <h3>Déroulement du Projet (18h)</h3>
             <ul class="modal-timeline">
-                <li><span class="step-badge">S1</span><div class="step-text">Analyse du CDC, répartition de l'équipe et planification initiale.</div></li>
-                <li><span class="step-badge">S2</span><div class="step-text">Dimensionnement des composants, calculs et simulation du cœur oscillateur (NE555) et des chaînes de LEDs.</div></li>
-                <li><span class="step-badge">S5</span><div class="step-text">Saisie du schéma et routage du PCB sur logiciel de CAO, rédaction du Dossier de Conception (DDC).</div></li>
-                <li><span class="step-badge">S9</span><div class="step-text"><strong>Jalon :</strong> Revue de conception détaillée validant le routage avant fabrication.</div></li>
-                <li><span class="step-badge">S10</span><div class="step-text">Rédaction du Dossier de Fabrication (DDF) et réalisation physique (gravure, perçage, soudure) en atelier.</div></li>
-                <li><span class="step-badge">S15</span><div class="step-text">Tests au banc d'essai, mesures d'intensités lumineuses et d'autonomie. Rédaction du Dossier de Vérification (DDV).</div></li>
-                <li><span class="step-badge">S18</span><div class="step-text">Démonstration finale et bilan de clôture du projet.</div></li>
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text">Analyse du CDC, répartition de l'équipe et planification initiale.</div></li>
+                <li><span class="step-badge timeline-study">S2</span><div class="step-text">Dimensionnement des composants, calculs et simulation du cœur oscillateur (NE555) et des chaînes de LEDs.</div></li>
+                <li><span class="step-badge timeline-study">S5</span><div class="step-text">Saisie du schéma et routage du PCB sur logiciel de CAO, rédaction du Dossier de Conception (DDC).</div></li>
+                <li><span class="step-badge timeline-design">S9</span><div class="step-text"><strong>Jalon :</strong> Revue de conception détaillée validant le routage avant fabrication.</div></li>
+                <li><span class="step-badge timeline-build">S10</span><div class="step-text">Rédaction du Dossier de Fabrication (DDF) et réalisation physique (gravure, perçage, soudure) en atelier.</div></li>
+                <li><span class="step-badge timeline-build">S15</span><div class="step-text">Tests au banc d'essai, mesures d'intensités lumineuses et d'autonomie. Rédaction du Dossier de Vérification (DDV).</div></li>
+                <li><span class="step-badge timeline-build">S18</span><div class="step-text">Démonstration finale et bilan de clôture du projet.</div></li>
             </ul>
         </div>
     </div>
@@ -374,15 +418,15 @@
             </ul>
             <h3>Déroulement du Projet (40h)</h3>
             <ul class="modal-timeline">
-                <li><span class="step-badge">S1</span><div class="step-text">Cadrage, organigramme des tâches et planification des ressources.</div></li>
-                <li><span class="step-badge">S3</span><div class="step-text">Recherche technologique et définition des blocs d'Acquisition (capteur), Traitement (comparateurs), Actionneurs et Énergie.</div></li>
-                <li><span class="step-badge">S14</span><div class="step-text"><strong>Jalon :</strong> Revue de Conception Préliminaire (Validation architecture).</div></li>
-                <li><span class="step-badge">S15</span><div class="step-text">Simulations électroniques approfondies et calculs de dérive des seuils.</div></li>
-                <li><span class="step-badge">S19</span><div class="step-text">Saisie de schéma, routage complet et rédaction du Dossier de Conception (DDC).</div></li>
-                <li><span class="step-badge">S22</span><div class="step-text"><strong>Jalon :</strong> Soutenance de projet et validation du Dossier de Fabrication (DDF).</div></li>
-                <li><span class="step-badge">S25</span><div class="step-text">Usinage du circuit imprimé, câblage des composants de surface et débogage matériel.</div></li>
-                <li><span class="step-badge">S31</span><div class="step-text">Campagne d'essais en étuve et bains régulés, relevés de mesures d'autonomie et rédaction du Dossier de Vérification (DDV).</div></li>
-                <li><span class="step-badge">S40</span><div class="step-text">Clôture et livraison finale de la documentation technique.</div></li>
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text">Cadrage, organigramme des tâches et planification des ressources.</div></li>
+                <li><span class="step-badge timeline-study">S3</span><div class="step-text">Recherche technologique et définition des blocs d'Acquisition (capteur), Traitement (comparateurs), Actionneurs et Énergie.</div></li>
+                <li><span class="step-badge timeline-design">S14</span><div class="step-text"><strong>Jalon :</strong> Revue de Conception Préliminaire (Validation architecture).</div></li>
+                <li><span class="step-badge timeline-design">S15</span><div class="step-text">Simulations électroniques approfondies et calculs de dérive des seuils.</div></li>
+                <li><span class="step-badge timeline-design">S19</span><div class="step-text">Saisie de schéma, routage complet et rédaction du Dossier de Conception (DDC).</div></li>
+                <li><span class="step-badge timeline-design">S22</span><div class="step-text"><strong>Jalon :</strong> Soutenance de projet et validation du Dossier de Fabrication (DDF).</div></li>
+                <li><span class="step-badge timeline-build">S25</span><div class="step-text">Usinage du circuit imprimé, câblage des composants de surface et débogage matériel.</div></li>
+                <li><span class="step-badge timeline-build">S31</span><div class="step-text">Campagne d'essais en étuve et bains régulés, relevés de mesures d'autonomie et rédaction du Dossier de Vérification (DDV).</div></li>
+                <li><span class="step-badge timeline-build">S40</span><div class="step-text">Clôture et livraison finale de la documentation technique.</div></li>
             </ul>
         </div>
     </div>
@@ -407,13 +451,13 @@
             </ul>
             <h3>Déroulement du Projet (58h)</h3>
             <ul class="modal-timeline">
-                <li><span class="step-badge">S1</span><div class="step-text">Analyse des exigences et planification d'équipe.</div></li>
-                <li><span class="step-badge">S3</span><div class="step-text">Définition des choix d'architecture avec insertion du bloc informatique (programmation du microcontrôleur).</div></li>
-                <li><span class="step-badge">S18</span><div class="step-text"><strong>Jalon :</strong> Validation de la Revue de Conception Préliminaire.</div></li>
-                <li><span class="step-badge">S23</span><div class="step-text">Calculs de courant pour les LEDs IR (&gt;200mA crête), schémas et routages électroniques. Écriture des algorithmes logiciels d'encodage et décodage des trames.</div></li>
-                <li><span class="step-badge">S33</span><div class="step-text"><strong>Jalon :</strong> Soutenance de conception détaillée.</div></li>
-                <li><span class="step-badge">S35</span><div class="step-text"><strong>Intégration Matériel/Logiciel :</strong> Soudure des cartes, implémentation et flashage du code C/C++, configuration des timers pour les signaux PWM et 4kHz.</div></li>
-                <li><span class="step-badge">S43</span><div class="step-text"><strong>Jalon Final :</strong> Tests de portée (portée min requise de 10m), validation du "Failsafe" sécurité, rédaction complète du DDV et clôture.</div></li>
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text">Analyse des exigences et planification d'équipe.</div></li>
+                <li><span class="step-badge timeline-launch">S3</span><div class="step-text">Définition des choix d'architecture avec insertion du bloc informatique (programmation du microcontrôleur).</div></li>
+                <li><span class="step-badge timeline-study">S18</span><div class="step-text"><strong>Jalon :</strong> Validation de la Revue de Conception Préliminaire.</div></li>
+                <li><span class="step-badge timeline-design">S23</span><div class="step-text">Calculs de courant pour les LEDs IR (&gt;200mA crête), schémas et routages électroniques. Écriture des algorithmes logiciels d'encodage et décodage des trames.</div></li>
+                <li><span class="step-badge timeline-design">S33</span><div class="step-text"><strong>Jalon :</strong> Soutenance de conception détaillée.</div></li>
+                <li><span class="step-badge timeline-build">S35</span><div class="step-text"><strong>Intégration Matériel/Logiciel :</strong> Soudure des cartes, implémentation et flashage du code C/C++, configuration des timers pour les signaux PWM et 4kHz.</div></li>
+                <li><span class="step-badge timeline-build">S43</span><div class="step-text"><strong>Jalon Final :</strong> Tests de portée (portée min requise de 10m), validation du "Failsafe" sécurité, rédaction complète du DDV et clôture.</div></li>
             </ul>
         </div>
     </div>
@@ -438,19 +482,14 @@
     </div>
 
     <script>
-        // Forcer le thème light initial s'il n'est pas défini
-        if (!document.body.getAttribute('data-theme')) {
-            document.body.setAttribute('data-theme', 'light');
-        }
-
-        // Changer de page
+        // Gestion du changement de page
         function showPage(pageId) {
             document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             window.scrollTo(0,0);
         }
 
-        // Modales
+        // Modales (Ouverture/Fermeture)
         function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; }
         function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
         
@@ -458,7 +497,7 @@
             if (event.target.classList.contains('modal')) { event.target.style.display = 'none'; }
         }
 
-        // Traduction Éléments
+        // Traduction Multilingue
         function toggleLanguage() {
             const frElements = document.querySelectorAll('.lang-fr');
             const enElements = document.querySelectorAll('.lang-en');
@@ -475,16 +514,16 @@
             }
         }
 
-        // Mode sombre complet et corrigé
+        // Mode Sombre / Lumineux
         function toggleTheme() {
             const body = document.body;
             const icon = document.querySelector('.theme-toggle i');
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.setAttribute('data-theme', 'light');
-                icon.classList.replace('fa-sun', 'fa-moon');
-            } else {
+            if (!body.getAttribute('data-theme') || body.getAttribute('data-theme') === 'light') {
                 body.setAttribute('data-theme', 'dark');
                 icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
             }
         }
     </script>
