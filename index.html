@@ -9,7 +9,7 @@
     <style>
         /* --- DESIGN SYSTEM PERSONNALISÉ --- */
         :root {
-            --bg: #dad7cd; /* Ta couleur mode clair */
+            --bg: #dad7cd; /* Couleur mode clair */
             --surface: #e9edc9;
             --text-main: #344e41;
             --text-muted: #3a5a40;
@@ -21,7 +21,7 @@
         }
 
         [data-theme="dark"] {
-            --bg: #588157; /* Ta couleur mode sombre */
+            --bg: #588157; /* Couleur mode sombre */
             --surface: #3a5a40;
             --text-main: #dad7cd;
             --text-muted: #a3b18a;
@@ -48,7 +48,7 @@
         /* --- NAVIGATION CENTRÉE --- */
         header {
             display: flex;
-            justify-content: center; /* On centre toute la navigation */
+            justify-content: center;
             align-items: center;
             padding: 20px 5%;
             position: sticky;
@@ -75,13 +75,14 @@
             display: flex; 
             align-items: center; 
             gap: 15px; 
-            margin-left: 35px; /* Écart après les liens */
+            margin-left: 35px;
         }
         
-        .theme-toggle { 
+        .btn-lang, .theme-toggle { 
             background: none; border: 1px solid var(--border); 
             color: var(--text-main); width: 38px; height: 38px;
             border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-family: inherit;
         }
 
         .btn-contact {
@@ -115,6 +116,7 @@
             border-radius: 12px;
             text-decoration: none;
             font-weight: 800;
+            cursor: pointer;
         }
 
         /* --- PROJETS --- */
@@ -130,22 +132,38 @@
         .card img { width: 100%; height: 200px; object-fit: cover; }
         .card-content { padding: 25px; }
 
-        /* --- MODALES & TIMELINE --- */
+        /* --- MODALES & IMAGES PAYSAGE --- */
         .modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--modal-overlay); z-index: 1000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(5px);
         }
         .modal-content {
-            background: var(--bg); color: var(--text-main); max-width: 800px; width: 100%;
+            background: var(--bg); color: var(--text-main); max-width: 850px; width: 100%;
             max-height: 90vh; border-radius: 25px; overflow-y: auto; padding: 40px; position: relative; border: 1px solid var(--border);
         }
         .close-modal {
             position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer;
             background: var(--surface); border: none; color: var(--text-main); width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
         }
-        .modal-images { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
-        .modal-images img { width: 100%; height: 220px; object-fit: contain; border-radius: 15px; background: white; padding: 10px; border: 1px solid var(--border); }
         
+        /* Ajustement Galerie pour affichage large Paysage */
+        .modal-images { display: flex; flex-direction: column; gap: 20px; margin: 25px 0; }
+        .modal-images img { 
+            width: 100%; 
+            height: 400px; 
+            object-fit: contain; 
+            border-radius: 15px; 
+            background: white; 
+            padding: 10px; 
+            border: 1px solid var(--border); 
+        }
+        
+        .req-list { list-style: none; padding: 0; margin: 15px 0; }
+        .req-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .req-list li::before { content: "→"; color: var(--text-main); position: absolute; left: 0; font-weight: 800; }
+
+        /* --- TIMELINE PROJETS --- */
         .modal-timeline { position: relative; margin: 30px 0; padding: 0; list-style: none; }
         .modal-timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 18px; width: 2px; background-color: var(--border); }
         .modal-timeline li { position: relative; margin-bottom: 25px; padding-left: 55px; }
@@ -159,14 +177,29 @@
         .timeline-design { background-color: #344e41; } 
         .timeline-build { background-color: #a3b18a; color: #344e41 !important; }
 
-        /* --- PARCOURS --- */
-        .timeline { border-left: 3px solid var(--text-main); margin-left: 20px; padding-left: 30px; }
+        /* --- PARCOURS & EXTRA-IUT --- */
+        .timeline { border-left: 3px solid var(--text-main); margin-left: 20px; padding-left: 30px; margin-bottom: 40px; }
         .timeline-item { margin-bottom: 50px; position: relative; }
         .timeline-item::before {
             content: ""; width: 16px; height: 16px; background: var(--bg);
             border: 4px solid var(--text-main); border-radius: 50%; position: absolute; left: -40px; top: 5px;
         }
+        
+        .extra-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        .extra-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .extra-card h3 { margin: 0 0 10px 0; display: flex; align-items: center; gap: 10px; font-size: 18px; }
 
+        /* Gestion de l'anglais masqué par défaut */
         .lang-en { display: none; }
     </style>
 </head>
@@ -184,6 +217,7 @@
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=TON_EMAIL@GMAIL.COM" target="_blank" class="btn-contact"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a>
         </nav>
         <div class="header-btns">
+            <button class="btn-lang" id="lang-btn" onclick="toggleLanguage()">EN</button>
             <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
         </div>
     </header>
@@ -201,77 +235,111 @@
     </section>
 
     <section id="projets">
-        <h1>Projets</h1>
+        <h1 class="lang-fr">Projets Réalisés</h1>
+        <h1 class="lang-en">Technical Projects</h1>
         <div class="project-grid">
             <div class="card" onclick="openModal('modal-rafale')">
                 <img src="images/carte rafale.png" alt="Rafale">
-                <div class="card-content"><h3>Système Rafale</h3><p>Électronique pour planeur miniature.</p></div>
+                <div class="card-content">
+                    <h3>Système Sonore & Lumineux Rafale</h3>
+                    <p class="lang-fr">Conception pour maquette d'aéromodélisme nocturne.</p>
+                    <p class="lang-en">Electronic design for nighttime model glider.</p>
+                </div>
             </div>
             <div class="card" onclick="openModal('modal-thermo')">
                 <img src="images/thermometre.jpg" alt="Thermomètre">
-                <div class="card-content"><h3>Thermomètre de Bain</h3><p>Mesure de température pour bébé.</p></div>
+                <div class="card-content">
+                    <h3>Thermomètre de Bain Bébé</h3>
+                    <p class="lang-fr">Système électronique basse consommation à seuils comparateurs.</p>
+                    <p class="lang-en">Low-power medical bath thermometer with comparative thresholds.</p>
+                </div>
             </div>
             <div class="card" onclick="openModal('modal-kart')">
-                <img src="images/CARTE KART.jpg" alt="Kart">
-                <div class="card-content"><h3>Kart À Hélice</h3><p>Télécommandé via Protocole NEC.</p></div>
+                <img src="images/carte emetteur de face.jpg" alt="Kart">
+                <div class="card-content">
+                    <h3>Kart À Hélice (Protocole NEC)</h3>
+                    <p class="lang-fr">Télécommande Infrarouge et gestion de puissance moteur.</p>
+                    <p class="lang-en">Infrared remote control and brushless motor power tracking.</p>
+                </div>
             </div>
             <div class="card" onclick="openModal('modal-main')">
                 <img src="images/image.gitkeep" alt="Main Robotique">
-                <div class="card-content"><h3>Main Robotique</h3><p>Projet DU Santé.</p></div>
+                <div class="card-content">
+                    <h3>Main Robotique (DU Santé)</h3>
+                    <p class="lang-fr">Prothèse motorisée articulée développée en équipe médicale.</p>
+                    <p class="lang-en">Motorized articulated prosthesis developed with healthcare goals.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="parcours">
-        <h1>Parcours</h1>
+        <h1 class="lang-fr">Cursus Académique</h1>
+        <h1 class="lang-en">Academic Path</h1>
         <div class="timeline">
             <div class="timeline-item">
                 <div style="font-weight:800; color:var(--text-muted)">2025 - Aujourd'hui</div>
-                <h3>BUT GEII - 1ère année</h3>
-                <p>IUT de Bordeaux. Électronique, Informatique Industrielle et Énergie.</p>
+                <h3><span class="lang-fr">BUT GEII - 1ère année</span><span class="lang-en">BUT GEII - 1st Year</span></h3>
+                <p class="lang-fr">IUT de Bordeaux. Spécialisation en Électricité, Systèmes Embarqués et Informatique Industrielle.</p>
+                <p class="lang-en">Bordeaux Institute of Technology. Focused on electronics, automation and industrial computing.</p>
             </div>
             <div class="timeline-item">
                 <div style="font-weight:800; color:var(--text-muted)">Fin 2025</div>
-                <h3>Baccalauréat Général</h3>
-                <p>Spécialités Mathématiques et Physique.</p>
+                <h3><span class="lang-fr">Baccalauréat Général</span><span class="lang-en">General Baccalaureate</span></h3>
+                <p class="lang-fr">Obtention des spécialités Mathématiques et Sciences Physiques.</p>
+                <p class="lang-en">Graduated with Mathematics and Physics majors.</p>
+            </div>
+        </div>
+
+        <h1 class="lang-fr">Engagements & Savoir-Être (Hors IUT)</h1>
+        <h1 class="lang-en">Personal Experiences & Soft Skills</h1>
+        <p class="lang-fr" style="font-size:16px; color:var(--text-muted);">La pratique régulière d'activités sportives m'apporte une discipline et des compétences transposables dans la gestion de mes projets en ingénierie :</p>
+        <p class="lang-en" style="font-size:16px; color:var(--text-muted);">Regular sports activities build the strict discipline and skills I transfer to my daily engineering work:</p>
+        
+        <div class="extra-container">
+            <div class="extra-card">
+                <h3><i class="fa-solid fa-dumbbell"></i> <span class="lang-fr">Musculation</span><span class="lang-en">Weightlifting</span></h3>
+                <p class="lang-fr">Développement d'une grande rigueur personnelle, persévérance face à l'effort et planification méthodique d'objectifs sur le long terme.</p>
+                <p class="lang-en">Develops self-discipline, perseverance through long tasks, and methodical planning of long-term objective structures.</p>
+            </div>
+            <div class="extra-card">
+                <h3><i class="fa-solid fa-basketball"></i> <span class="lang-fr">Basket-ball</span><span class="lang-en">Basketball</span></h3>
+                <p class="lang-fr">Esprit d'équipe affirmé, communication rapide en situation de stress et coordination collective pour atteindre un but commun.</p>
+                <p class="lang-en">Strong team spirit, strategic communication under fast conditions, and group alignment to achieve collective targets.</p>
+            </div>
+            <div class="extra-card">
+                <h3><i class="fa-solid fa-swimmer"></i> <span class="lang-fr">Natation</span><span class="lang-en">Swimming</span></h3>
+                <p class="lang-fr">Amélioration de la concentration mentale, gestion de la respiration et de l'endurance lors de charges de travail intensives.</p>
+                <p class="lang-en">Enhances deep mental focus, breathing control, and high stamina during heavy technical project environments.</p>
             </div>
         </div>
     </section>
 
-    <div id="modal-kart" class="modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('modal-kart')">&times;</button>
-            <h2>Kart À Hélice Télécommandé (Protocole NEC)</h2>
-            <div class="modal-images">
-                <img src="images/carte emetteur de face.jpg" alt="Émetteur face">
-                <img src="images/carte recepteur.jpg" alt="Récepteur">
-                <img src="images/carte emetteur de dos.jpg" alt="Émetteur dos">
-            </div>
-            <h3>Cahier des Charges</h3>
-            <p>Conception d'un kart propulsé par hélice, piloté à distance par une liaison infrarouge sécurisée utilisant le protocole NEC.</p>
-            <ul class="modal-timeline">
-                <li><span class="step-badge timeline-launch">S1</span><div class="step-text">Analyse des exigences et architecture.</div></li>
-                <li><span class="step-badge timeline-study">S23</span><div class="step-text">Calculs et routage des cartes émetteur/récepteur.</div></li>
-                <li><span class="step-badge timeline-design">S35</span><div class="step-text">Codage C/C++ et intégration du protocole NEC.</div></li>
-                <li><span class="step-badge timeline-build">S43</span><div class="step-text">Tests de portée (10m) et validation finale.</div></li>
-            </ul>
-        </div>
-    </div>
-
     <div id="modal-rafale" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-rafale')">&times;</button>
-            <h2>Système Sonore & Lumineux Rafale</h2>
+            <h2>Système Sonore & Lumineux - Rafale Toy Corp</h2>
             <div class="modal-images">
-                <img src="images/schéma rafale.png" alt="Schéma">
-                <img src="images/test de la carte rafale.png" alt="Test">
+                <img src="images/schéma rafale.png" alt="Schéma Rafale">
+                <img src="images/test de la carte rafale.png" alt="Test Prototype Rafale">
             </div>
-            <h3>Déroulement</h3>
+            <h3>Cahier des Charges</h3>
+            <p class="lang-fr">Développer le système électronique embarqué autonome d'un planeur miniature pour des lancers nocturnes.</p>
+            <p class="lang-en">Develop the standalone embedded electronics of a small glider model for night operations.</p>
+            <ul class="req-list">
+                <li><strong>EXIG_ENCOMBREMENT :</strong> Max strict : 95mm x 40mm x H&lt;30mm.</li>
+                <li><strong>EXIG_AUTONOMIE :</strong> > 60s d'opération continue via alimentation sécurisée anti-crash (1.8V à 5.4V).</li>
+                <li><strong>EXIG_BRUIT :</strong> Signal pseudo-aléatoire variant de 280Hz à 780Hz proportionnel à la décharge de tension.</li>
+                <li><strong>EXIG_VISIBILITÉ :</strong> 2 LEDs fixes d'ailes et 1 LED de fuselage clignotante (période 1.9s, flash 0.1s).</li>
+                <li><strong>EXIG_COUT :</strong> Budget global &lt; 20€ par prototype, temps alloué restreint à 18 heures.</li>
+            </ul>
+            <h3>Déroulement Temporel</h3>
             <ul class="modal-timeline">
-                <li><span class="step-badge timeline-launch">S1</span><div class="step-text">Analyse du besoin Toy Corp.</div></li>
-                <li><span class="step-badge timeline-study">S2</span><div class="step-text">Simulation NE555.</div></li>
-                <li><span class="step-badge timeline-design">S10</span><div class="step-text">Fabrication PCB.</div></li>
-                <li><span class="step-badge timeline-build">S18</span><div class="step-text">Démonstration.</div></li>
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Lancement :</b><b class="lang-en">Launch:</b> Analyse du CDC et planification des rôles.</div></li>
+                <li><span class="step-badge timeline-study">S2</span><div class="step-text"><b class="lang-fr">Étude :</b><b class="lang-en">Study:</b> Calculs théoriques et simulation de l'oscillateur NE555.</div></li>
+                <li><span class="step-badge timeline-design">S5</span><div class="step-text"><b class="lang-fr">Conception :</b><b class="lang-en">Design:</b> Saisie de schéma, routage PCB et rédaction du DDC.</div></li>
+                <li><span class="step-badge timeline-build">S10</span><div class="step-text"><b class="lang-fr">Fabrication :</b><b class="lang-en">Manufacturing:</b> Gravure chimique, perçage et soudage en atelier.</div></li>
+                <li><span class="step-badge timeline-build">S15-18</span><div class="step-text"><b class="lang-fr">Validation :</b><b class="lang-en">Validation:</b> Tests d'autonomie, relevés de mesures (DDV) et clôture.</div></li>
             </ul>
         </div>
     </div>
@@ -279,16 +347,59 @@
     <div id="modal-thermo" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-thermo')">&times;</button>
-            <h2>Thermomètre De Bain</h2>
+            <h2>Thermomètre De Bain pour Bébé</h2>
             <div class="modal-images">
-                <img src="images/verification thermometre.png" alt="Vérif 1">
-                <img src="images/verification thermometre 2.jpg" alt="Vérif 2">
+                <img src="images/verification thermometre.png" alt="Schéma Thermomètre">
+                <img src="images/verification thermometre 2.jpg" alt="Routage Thermomètre">
             </div>
-            <h3>Étapes clés</h3>
+            <h3>Cahier des Charges</h3>
+            <p class="lang-fr">Concevoir une carte électronique étanche basse consommation d'un thermomètre de bain médical grand public.</p>
+            <p class="lang-en">Design a waterproof, low-power electronic board for a consumer bath medical thermometer device.</p>
+            <ul class="req-list">
+                <li><strong>EXIG_DIMENSIONS :</strong> Circuit imprimé double face de 100mm x 60mm à 4 fixations.</li>
+                <li><strong>EXIG_AUTONOMIE :</strong> Fonctionnement continu &gt; 24h sur batterie LiPo 2S avec switch ON/OFF.</li>
+                <li><strong>EXIG_SEUILS :</strong> Analyse thermique de +5°C à +50°C. Alerte Eau Froide (&lt;36°C), Idéale (36°C-39°C) et Chaude (&gt;39°C).</li>
+                <li><strong>EXIG_IHM :</strong> Affichage direct via 3 voyants distincts étalonnés (Bleu, Vert, Rouge) à intensité de 50 mcd.</li>
+                <li><strong>EXIG_COUT :</strong> Enveloppe budgétaire stricte &lt; 20€, temps de conception de 40 heures.</li>
+            </ul>
+            <h3>Déroulement Temporel</h3>
             <ul class="modal-timeline">
-                <li><span class="step-badge timeline-launch">S1</span><div class="step-text">Cadrage du projet.</div></li>
-                <li><span class="step-badge timeline-design">S19</span><div class="step-text">Routage et DDC.</div></li>
-                <li><span class="step-badge timeline-build">S31</span><div class="step-text">Tests en étuve.</div></li>
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Initialisation :</b><b class="lang-en">Kickoff:</b> Répartition des blocs de tâches et planification globale.</div></li>
+                <li><span class="step-badge timeline-study">S3</span><div class="step-text"><b class="lang-fr">Recherche :</b><b class="lang-en">Research:</b> Choix des composants d'acquisition et amplificateurs.</div></li>
+                <li><span class="step-badge timeline-design">S14-19</span><div class="step-text"><b class="lang-fr">Conception :</b><b class="lang-en">Design:</b> Simulations de dérives, routage CAO et validation du DDC.</div></li>
+                <li><span class="step-badge timeline-build">S25</span><div class="step-text"><b class="lang-fr">Intégration :</b><b class="lang-en">Assembly:</b> Usinage mécanique du typon, cambrage et soudure CMS.</div></li>
+                <li><span class="step-badge timeline-build">S31-40</span><div class="step-text"><b class="lang-fr">Mesures :</b><b class="lang-en">Testing:</b> Campagne d'essais en étuve thermique, rapport DDV et soutenance.</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-kart" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-kart')">&times;</button>
+            <h2>Kart À Hélice Télécommandé (Protocole NEC)</h2>
+            <div class="modal-images">
+                <img src="images/carte emetteur de face.jpg" alt="Émetteur Vue Face">
+                <img src="images/carte recepteur.jpg" alt="Récepteur Intégration">
+                <img src="images/carte emetteur de dos.jpg" alt="Émetteur Vue Dos">
+            </div>
+            <h3>Cahier des Charges</h3>
+            <p class="lang-fr">Développement matériel et logiciel complet d'un système de modélisme (Émetteur et Récepteur) contrôlé sans fil.</p>
+            <p class="lang-en">Full hardware and software development of a wireless remote-controlled vehicle platform.</p>
+            <ul class="req-list">
+                <li><strong>EXIG_EMETTEUR :</strong> Encombrement 120x80mm, accus LiPo 2S, 2 potentiomètres (Vitesse, Servomoteur) et 1 bouton Klaxon.</li>
+                <li><strong>EXIG_TRAME :</strong> Encodage d'une trame infrarouge NEC 32 bits (Adresse équipe, Direction 5 bits, Puissance 3 bits).</li>
+                <li><strong>EXIG_RECEPTEUR :</strong> PCB 100x75mm, contrôle d'intégrité de trame et gestion des sécurités.</li>
+                <li><strong>EXIG_SECURITE :</strong> "Failsafe" intégré coupant instantanément la puissance moteur en cas de perte du faisceau optique.</li>
+                <li><strong>EXIG_ACTIONNEURS :</strong> Signaux PWM pour variateur Brushless et servomoteur (+/-30°), signal carré à 4kHz pour avertisseur sonore.</li>
+                <li><strong>EXIG_COUT :</strong> Budget maximal de 160€ TTC, délai global de réalisation de 58 heures.</li>
+            </ul>
+            <h3>Déroulement Temporel</h3>
+            <ul class="modal-timeline">
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Cadrage :</b><b class="lang-en">Cadrage:</b> Définition de l'architecture fonctionnelle Élec/Info.</div></li>
+                <li><span class="step-badge timeline-study">S3-18</span><div class="step-text"><b class="lang-fr">Étude :</b><b class="lang-en">Study:</b> Calculs d'émission IR (&gt;200mA crête) et modélisation algorithmique.</div></li>
+                <li><span class="step-badge timeline-design">S23-33</span><div class="step-text"><b class="lang-fr">Routage :</b><b class="lang-en">CAD:</b> Dessin des circuits imprimés et programmation des modules d'interruption.</div></li>
+                <li><span class="step-badge timeline-build">S35</span><div class="step-text"><b class="lang-fr">Soudure & Flash :</b><b class="lang-en">Assembly:</b> Câblage des cartes, implémentation C++ et configuration Timers.</div></li>
+                <li><span class="step-badge timeline-build">S43-58</span><div class="step-text"><b class="lang-fr">Essais :</b><b class="lang-en">Tests:</b> Validation de la portée à 10m, écriture du DDV et démonstration dynamique.</div></li>
             </ul>
         </div>
     </div>
@@ -296,31 +407,61 @@
     <div id="modal-main" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-main')">&times;</button>
-            <h2>Main Robotique - DU Santé</h2>
-            <p>Étude de la préhension humaine et motorisation de prothèses articulées.</p>
+            <h2>Main Robotique Motorisée - DU Santé</h2>
+            <div class="modal-images">
+                <img src="images/image.gitkeep" alt="Aperçu Prothèse">
+            </div>
+            <h3>Présentation du Projet</h3>
+            <p class="lang-fr">Conception interdisciplinaire d'une prothèse de main articulée programmable, reliant l'ingénierie au domaine médical.</p>
+            <p class="lang-en">Interdisciplinary design of an open articulated programmable hand prosthesis, linking engineering and modern medicine.</p>
+            <ul class="req-list">
+                <li>Étude mécanique des liaisons pour reproduire la préhension humaine.</li>
+                <li>Contrôle de servomoteurs miniatures pour l'activation indépendante des doigts.</li>
+                <li>Traitement des commandes via capteurs de positionnement.</li>
+            </ul>
         </div>
     </div>
 
     <script>
+        // Changement de page adaptatif
         function showPage(pageId) {
             document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             window.scrollTo(0,0);
         }
 
+        // Modales 
         function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; }
         function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
         window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.style.display = 'none'; }
 
-        function toggleTheme() {
-            const b = document.body;
-            const i = document.querySelector('.theme-toggle i');
-            if (b.getAttribute('data-theme') === 'dark') {
-                b.setAttribute('data-theme', 'light');
-                i.classList.replace('fa-sun', 'fa-moon');
+        // Système de Traduction FR / EN
+        function toggleLanguage() {
+            const frElements = document.querySelectorAll('.lang-fr');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.getElementById('lang-btn');
+
+            if (btn.innerText === "EN") {
+                frElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'inline-block');
+                btn.innerText = "FR";
             } else {
-                b.setAttribute('data-theme', 'dark');
-                i.classList.replace('fa-moon', 'fa-sun');
+                frElements.forEach(el => el.style.display = 'inline-block');
+                enElements.forEach(el => el.style.display = 'none');
+                btn.innerText = "EN";
+            }
+        }
+
+        // Gestion Mode Sombre / Lumineux (Avec tes codes couleurs exacts)
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.querySelector('.theme-toggle i');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
             }
         }
     </script>
