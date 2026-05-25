@@ -394,7 +394,7 @@
                 <li><strong>EXIG_EMETTEUR :</strong> Encombrement 120x80mm, accus LiPo 2S, 2 potentiomètres (Vitesse, Servomoteur) et 1 bouton Klaxon.</li>
                 <li><strong>EXIG_TRAME :</strong> Encodage d'une trame infrarouge NEC 32 bits (Adresse équipe, Direction 5 bits, Puissance 3 bits).</li>
                 <li><strong>EXIG_RECEPTEUR :</strong> PCB 100x75mm, contrôle d'intégrité de trame et gestion des sécurités.</li>
-                <li><strong>EXIG_SECURITE :</strong> "Failsafe" intégré coupant instantanément la puissance moteur en cas de perte du faisceau optique.</li>
+                <li><strong>EXIG_SECURITE : "Failsafe"</strong> intégré coupant instantanément la puissance moteur en cas de perte du faisceau optique.</li>
                 <li><strong>EXIG_ACTIONNEURS :</strong> Signaux PWM pour variateur Brushless et servomoteur (+/-30°), signal carré à 4kHz pour avertisseur sonore.</li>
                 <li><strong>EXIG_COUT :</strong> Budget maximal de 160€ TTC, délai global de réalisation de 58 heures.</li>
             </ul>
@@ -419,10 +419,36 @@
             <h3>Présentation du Projet</h3>
             <p class="lang-fr">Conception interdisciplinaire d'une prothèse de main articulée programmable, reliant l'ingénierie au domaine médical.</p>
             <p class="lang-en">Interdisciplinary design of an open articulated programmable hand prosthesis, linking engineering and modern medicine.</p>
+            
             <ul class="req-list">
-                <li>Étude mécanique des liaisons pour reproduire la préhension humaine.</li>
-                <li>Contrôle de servomoteurs miniatures pour l'activation indépendante des doigts.</li>
-                <li>Traitement des commandes via capteurs de positionnement.</li>
+                <li>
+                    <strong><span class="lang-fr">Modélisation CAO :</span><span class="lang-en">CAD Modeling:</span></strong> 
+                    <span class="lang-fr">Conception géométrique et modélisation complète des doigts de la main sur le logiciel <b>CATIA</b>.</span>
+                    <span class="lang-en">Geometric design and complete modeling of the hand fingers using <b>CATIA</b> software.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-fr">Interface Myoélectrique :</span><span class="lang-en">Myoelectric Interface:</span></strong> 
+                    <span class="lang-fr">Utilisation de capteurs positionnés sur l'avant-bras pour détecter l'activité musculaire et piloter les mouvements.</span>
+                    <span class="lang-en">Use of sensors placed on the forearm to detect muscle activity and drive finger movements.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-fr">Programmation Arduino :</span><span class="lang-en">Arduino Programming:</span></strong> 
+                    <span class="lang-fr">Développement d'algorithmes lors de séances de codage pour traduire les signaux des capteurs en angles pour les servomoteurs des doigts.</span>
+                    <span class="lang-en">Development of algorithms during coding sessions to map sensor data to servo motor angles.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-fr">Synergie Inter-groupes :</span><span class="lang-en">Cross-team Synergy:</span></strong> 
+                    <span class="lang-fr">Collaboration étroite avec le <b>groupe Robotique</b> pour l'assemblage mécanique final et l'intégration matérielle de la main.</span>
+                    <span class="lang-en">Close collaboration with the <b>Robotics team</b> for final mechanical assembly and hardware integration.</span>
+                </li>
+            </ul>
+
+            <h3>Déroulement Temporel</h3>
+            <ul class="modal-timeline">
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Étude & Conception :</b><b class="lang-en">Study & Design:</b> Modélisation 3D des pièces de la main sur le logiciel CATIA.</div></li>
+                <li><span class="step-badge timeline-study">S2</span><div class="step-text"><b class="lang-fr">Séances Arduino :</b><b class="lang-en">Arduino Sessions:</b> Développement du code de contrôle et traitement des signaux d'acquisition.</div></li>
+                <li><span class="step-badge timeline-design">S3</span><div class="step-text"><b class="lang-fr">Tests d'Ajustement :</b><b class="lang-en">Adjustment Tests:</b> Intégration et étalonnage des capteurs placés sur l'avant-bras pour le contrôle des doigts.</div></li>
+                <li><span class="step-badge timeline-build">S4</span><div class="step-text"><b class="lang-fr">Réalisation Collective :</b><b class="lang-en">Co-building:</b> Phase de fabrication finale et assemblage matériel menés en partenariat avec le groupe Robotique.</div></li>
             </ul>
         </div>
     </div>
