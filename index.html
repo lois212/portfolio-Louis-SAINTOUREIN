@@ -106,8 +106,20 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* --- ACCUEIL (TEXTE CENTRÉ) --- */
-        .hero { text-align: center; margin-top: 10vh; }
-        .hero h1 { font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; }
+        .hero { text-align: center; margin-top: 5vh; }
+        
+        /* Style pour la photo de profil */
+        .hero-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--text-main);
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 { font-size: 64px; font-weight: 800; line-height: 1.1; margin-top: 10px; margin-bottom: 30px; }
         .hero p { font-size: 22px; color: var(--text-muted); max-width: 800px; margin: 0 auto 40px; }
         
         .btn-main {
@@ -229,6 +241,8 @@
 
     <section id="home" class="active">
         <div class="hero">
+            <img src="images/photo.jpg" alt="Louis SAINTOUREIN" class="hero-avatar">
+            
             <h1 class="lang-fr">Je suis <br><span class="highlight">Louis SAINTOUREIN</span></h1>
             <h1 class="lang-en">I am <br><span class="highlight">Louis SAINTOUREIN</span></h1>
             
