@@ -78,12 +78,14 @@
             margin-left: 35px;
         }
         
-        .btn-lang, .theme-toggle { 
+        .btn-lang, .theme-toggle, .btn-linkedin { 
             background: none; border: 1px solid var(--border); 
             color: var(--text-main); width: 38px; height: 38px;
             border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center;
             font-weight: 800; font-family: inherit;
+            text-decoration: none; font-size: 18px;
         }
+        .btn-linkedin:hover { opacity: 0.6; }
 
         .btn-contact {
             background-color: var(--text-main);
@@ -217,6 +219,9 @@
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=l.saintoureinpro@gmail.com" target="_blank" class="btn-contact"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a>
         </nav>
         <div class="header-btns">
+            <a href="https://www.linkedin.com/in/louis-saintourein-a7aa71289/" target="_blank" class="btn-linkedin" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
             <button class="btn-lang" id="lang-btn" onclick="toggleLanguage()">EN</button>
             <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
         </div>
@@ -304,7 +309,7 @@
             </div>
             <div class="extra-card">
                 <h3><i class="fa-solid fa-basketball"></i> <span class="lang-fr">Basket-ball</span><span class="lang-en">Basketball</span></h3>
-                <p class="lang-fr">Esprit d'équipe affirmé, communication rapide en situation de stress et coordination collective pour atteindre un but commun.</p>
+                <p class="lang-fr">Esprit d'équipe affirme, communication rapide en situation de stress et coordination collective pour atteindre un but commun.</p>
                 <p class="lang-en">Strong team spirit, strategic communication under fast conditions, and group alignment to achieve collective targets.</p>
             </div>
             <div class="extra-card">
