@@ -23,6 +23,8 @@
             --badge-concevoir: #ae2012;
             --badge-verifier: #e9d8a6;
             --badge-verifier-text: #005f73;
+            --filter-active: #344e41;
+            --filter-active-text: #dad7cd;
         }
 
         [data-theme="dark"] {
@@ -39,6 +41,8 @@
             --badge-concevoir: #ca6702;
             --badge-verifier: #94d2bd;
             --badge-verifier-text: #001219;
+            --filter-active: #dad7cd;
+            --filter-active-text: #344e41;
         }
 
         * { 
@@ -143,6 +147,84 @@
         .card img { width: 100%; height: 200px; object-fit: cover; }
         .card-content { padding: 25px; }
 
+        /* --- PAGE COMPÉTENCES (STYLE DASHBOARD) --- */
+        .skills-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .skills-layout { grid-template-columns: 1fr; gap: 20px; }
+            .filter-sidebar { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+        }
+        .filter-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .filter-title {
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        .filter-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .filter-btn:hover { opacity: 0.8; transform: translateX(5px); }
+        .filter-btn.active {
+            background: var(--filter-active);
+            color: var(--filter-active-text);
+            border-color: var(--filter-active);
+        }
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .software-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+        }
+        .software-card:hover { transform: translateY(-5px); }
+        .software-card img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .software-card h4 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 800;
+        }
+        .software-card span {
+            font-size: 12px;
+            opacity: 0.7;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
         /* --- MODALES & IMAGES PAYSAGE --- */
         .modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -158,7 +240,6 @@
             display: flex; align-items: center; justify-content: center;
         }
         
-        /* Ajustement Galerie pour affichage large Paysage */
         .modal-images { display: flex; flex-direction: column; gap: 20px; margin: 25px 0; }
         .modal-images img { 
             width: 100%; 
@@ -252,8 +333,9 @@
         <nav>
             <a onclick="showPage('home')"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
             <a onclick="showPage('parcours')"><span class="lang-fr">Parcours</span><span class="lang-en">Resume</span></a>
+            <a onclick="showPage('competences')"><span class="lang-fr">Compétences</span><span class="lang-en">Skills</span></a>
             <a onclick="showPage('projets')"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
-            <a href="images/CV_Louis_SAINTOUREIN.pdf.pdf" target="_blank" class="btn-cv">
+            <a href="images/CV_Louis_SAINTOUREIN.pdf" target="_blank" class="btn-cv">
                 <i class="fa-solid fa-file-pdf"></i>
                 <span class="lang-fr">Mon CV</span><span class="lang-en">My CV</span>
             </a>
@@ -270,13 +352,94 @@
 
     <section id="home" class="active">
         <div class="hero">
-            <h1 class="lang-fr"> <br><span class="highlight">Louis SAINTOUREIN</span></h1>
-            <h1 class="lang-en"> <br><span class="highlight">Louis SAINTOUREIN</span></h1>
+            <h1 class="lang-fr"><br><span class="highlight">Louis SAINTOUREIN</span></h1>
+            <h1 class="lang-en"><br><span class="highlight">Louis SAINTOUREIN</span></h1>
             
             <p class="lang-fr">Étudiant en 1ère année de BUT GEII à l'IUT de Bordeaux. Passionné par l'électronique et les systèmes intelligents.</p>
             <p class="lang-en">1st year Electrical Engineering student at Bordeaux IT. Passionate about electronics and smart systems.</p>
             
             <a onclick="showPage('projets')" class="btn-main"><span class="lang-fr">Mes Projets</span><span class="lang-en">My Projects</span></a>
+        </div>
+    </section>
+
+    <section id="competences">
+        <h1 class="lang-fr">Mes Compétences Technique & Outils</h1>
+        <h1 class="lang-en">Technical Skills & Tools</h1>
+        
+        <div class="skills-layout">
+            <div class="filter-sidebar">
+                <div class="filter-title">/// Filtres</div>
+                <button class="filter-btn active" onclick="filterSkills('all', this)"><span class="lang-fr">🗂 Tous</span><span class="lang-en">🗂 All</span></button>
+                <button class="filter-btn" onclick="filterSkills('electronique', this)"><span class="lang-fr">Électronique</span><span class="lang-en">Electronics</span></button>
+                <button class="filter-btn" onclick="filterSkills('automatisme', this)"><span class="lang-fr">Automatisme</span><span class="lang-en">Automation</span></button>
+                <button class="filter-btn" onclick="filterSkills('informatique', this)"><span class="lang-fr">Informatique</span><span class="lang-en">Computing</span></button>
+                <button class="filter-btn" onclick="filterSkills('bureautique', this)"><span class="lang-fr">Bureautique</span><span class="lang-en">Office</span></button>
+                <button class="filter-btn" onclick="filterSkills('energie', this)"><span class="lang-fr">Énergie</span><span class="lang-en">Energy</span></button>
+                <button class="filter-btn" onclick="filterSkills('sae', this)"><span class="lang-fr">SAÉ / Projet</span><span class="lang-en">SAÉ / Project</span></button>
+            </div>
+
+            <div class="software-grid">
+                <div class="software-card" data-cat="electronique">
+                    <img src="images/PROTEUS.jpg" alt="Proteus">
+                    <h4>Proteus</h4>
+                    <span>Électronique</span>
+                </div>
+                
+                <div class="software-card" data-cat="automatisme">
+                    <img src="images/TIA Portal.jpg" alt="TIA Portal">
+                    <h4>TIA Portal</h4>
+                    <span>Automatisme</span>
+                </div>
+
+                <div class="software-card" data-cat="informatique">
+                    <img src="images/STM32.png" alt="STM32 CubeMX">
+                    <h4>STM32 CubeMX</h4>
+                    <span>Informatique</span>
+                </div>
+                <div class="software-card" data-cat="informatique">
+                    <img src="images/arduino.png" alt="Arduino">
+                    <h4>Arduino</h4>
+                    <span>Informatique</span>
+                </div>
+
+                <div class="software-card" data-cat="bureautique">
+                    <img src="images/EXCEL.png" alt="Excel">
+                    <h4>Excel</h4>
+                    <span>Bureautique</span>
+                </div>
+                <div class="software-card" data-cat="bureautique">
+                    <img src="images/Google docs.jpg" alt="Google Docs">
+                    <h4>Google Docs</h4>
+                    <span>Bureautique</span>
+                </div>
+                <div class="software-card" data-cat="bureautique">
+                    <img src="images/CANVA.png" alt="Canva">
+                    <h4>Canva</h4>
+                    <span>Bureautique</span>
+                </div>
+                <div class="software-card" data-cat="bureautique">
+                    <img src="images/DRIVE.png" alt="Drive">
+                    <h4>Google Drive</h4>
+                    <span>Bureautique</span>
+                </div>
+
+                <div class="software-card" data-cat="energie">
+                    <img src="images/WinRelais.png" alt="WinRelais">
+                    <h4>WinRelais</h4>
+                    <span>Énergie</span>
+                </div>
+
+                <div class="software-card" data-cat="sae">
+                    <img src="images/ares.jpg" alt="ARES">
+                    <h4>ARES</h4>
+                    <span>SAÉ / Projet</span>
+                </div>
+                <div class="software-card" data-cat="sae">
+                    <img src="images/isis.png" alt="ISIS">
+                    <h4>ISIS</h4>
+                    <span>SAÉ / Projet</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -390,6 +553,7 @@
             <p class="lang-fr">Développer le système électronique embarqué autonome d'un planeur miniature pour des lancers nocturnes.</p>
             <p class="lang-en">Develop the standalone embedded electronics of a small glider model for night operations.</p>
             <ul class="req-list">
+                <li>options...</li>
                 <li><strong>EXIG_ENCOMBREMENT :</strong> Max strict : 95mm x 40mm x H&lt;30mm.</li>
                 <li><strong>EXIG_AUTONOMIE :</strong> > 60s d'opération continue via alimentation sécurisée anti-crash (1.8V à 5.4V).</li>
                 <li><strong>EXIG_BRUIT :</strong> Signal pseudo-aléatoire variant de 280Hz à 780Hz proportionnel à la décharge de tension.</li>
@@ -576,6 +740,23 @@
             window.scrollTo(0,0);
         }
 
+        // Script de filtrage dynamique de l'onglet Compétences
+        function filterSkills(category, button) {
+            // Gérer la classe active sur les boutons
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filtrer les cartes
+            const cards = document.querySelectorAll('.software-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
         // Modales 
         function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; }
         function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
@@ -598,7 +779,7 @@
             }
         }
 
-        // Gestion Mode Sombre / Lumineux (Avec tes codes couleurs exacts)
+        // Gestion Mode Sombre / Lumineux
         function toggleTheme() {
             const body = document.body;
             const icon = document.querySelector('.theme-toggle i');
