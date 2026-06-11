@@ -28,7 +28,7 @@
         }
 
         [data-theme="dark"] {
-            --bg: #252832; /* Couleur mode sombre */
+            --bg: #588157; /* Couleur mode sombre */
             --surface: #3a5a40;
             --text-main: #dad7cd;
             --text-muted: #a3b18a;
@@ -333,9 +333,9 @@
         <nav>
             <a onclick="showPage('home')"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
             <a onclick="showPage('parcours')"><span class="lang-fr">Parcours</span><span class="lang-en">Resume</span></a>
-            <a onclick="showPage('Outils Technique')"><span class="lang-fr">Outils Technique</span><span class="lang-en">Technical Tools</span></a>
+            <a onclick="showPage('competences')"><span class="lang-fr">Compétences</span><span class="lang-en">Skills</span></a>
             <a onclick="showPage('projets')"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
-            <a href="images/CV_Louis_SAINTOUREIN.pdf.pdf" target="_blank" class="btn-cv">
+            <a href="images/CV_Louis_SAINTOUREIN.pdf" target="_blank" class="btn-cv">
                 <i class="fa-solid fa-file-pdf"></i>
                 <span class="lang-fr">Mon CV</span><span class="lang-en">My CV</span>
             </a>
@@ -362,9 +362,9 @@
         </div>
     </section>
 
-    <section id="Les Outils Technique">
-        <h1 class="lang-fr"> Les Outils Technique </h1>
-        <h1 class="lang-en">Technical Tools</h1>
+    <section id="competences">
+        <h1 class="lang-fr">Mes Compétences Technique & Outils</h1>
+        <h1 class="lang-en">Technical Skills & Tools</h1>
         
         <div class="skills-layout">
             <div class="filter-sidebar">
@@ -506,14 +506,20 @@
         <div class="extra-container">
             <div class="extra-card">
                 <h3><i class="fa-solid fa-dumbbell"></i> <span class="lang-fr">Musculation</span><span class="lang-en">Weightlifting</span></h3>
-                <p class="lang-fr">Développement d'une grande rigueur personnelle, persévérance face à l'effort </p>
-                <p class="lang-en">Develops self-discipline, perseverance through long tasks</p>
+                <p class="lang-fr">Développement d'une grande rigueur personnelle, persévérance face à l'effort et planification méthodique d'objectifs sur le long terme.</p>
+                <p class="lang-en">Develops self-discipline, perseverance through long tasks, and methodical planning of long-term objective structures.</p>
             </div>
             <div class="extra-card">
                 <h3><i class="fa-solid fa-basketball"></i> <span class="lang-fr">Basket-ball</span><span class="lang-en">Basketball</span></h3>
-                <p class="lang-fr">Esprit d'équipe affirmé</p>
-                <p class="lang-en">Strong team spirit</p>
+                <p class="lang-fr">Esprit d'équipe affirmé, communication rapide en situation de stress et coordination collective pour atteindre un but commun.</p>
+                <p class="lang-en">Strong team spirit, strategic communication under fast conditions, and group alignment to achieve collective targets.</p>
             </div>
+            <div class="extra-card">
+                <h3><i class="fa-solid fa-swimmer"></i> <span class="lang-fr">Natation</span><span class="lang-en">Swimming</span></h3>
+                <p class="lang-fr">Amélioration de la concentration mentale, gestion de la respiration et de l'endurance lors de charges de travail intensives.</p>
+                <p class="lang-en">Enhances deep mental focus, breathing control, and high stamina during heavy technical project environments.</p>
+            </div>
+        </div>
     </section>
 
     <div id="modal-rafale" class="modal">
@@ -600,166 +606,147 @@
                 <li><strong>EXIG_AUTONOMIE :</strong> Fonctionnement continu &gt; 24h sur batterie LiPo 2S avec switch ON/OFF.</li>
                 <li><strong>EXIG_SEUILS :</strong> Analyse thermique de +5°C à +50°C. Alerte Eau Froide (&lt;36°C), Idéale (36°C-39°C) et Chaude (&gt;39°C).</li>
                 <li><strong>EXIG_IHM :</strong> Affichage direct via 3 voyants distincts étalonnés (Bleu, Vert, Rouge) à intensité de 50 mcd.</li>
-              <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    </head>
-<body data-theme="dark">
-
-    <main>
-        <div id="modal-prev" class="modal">
-            <div class="modal-content">
-                <button class="close-modal" onclick="closeModal('modal-prev')">&times;</button>
-                <h2>Titre du Projet Précédent</h2>
-                <ul class="req-list">
-                    <li><strong>EXIG_COUT :</strong> Enveloppe budgétaire stricte &lt; 20€, temps de conception de 40 heures.</li>
-                </ul>
-                <h3>Déroulement Temporel</h3>
-                <ul class="modal-timeline">
-                    <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Initialisation :</b><b class="lang-en">Kickoff:</b> Répartition des blocs de tâches et planification globale.</div></li>
-                    <li><span class="step-badge timeline-study">S3</span><div class="step-text"><b class="lang-fr">Recherche :</b><b class="lang-en">Research:</b> Choix des composants d'acquisition et amplificateurs.</div></li>
-                    <li><span class="step-badge timeline-design">S14-19</span><div class="step-text"><b class="lang-fr">Conception :</b><b class="lang-en">Design:</b> Simulations de dérives, routage CAO et validation du DDC.</div></li>
-                    <li><span class="step-badge timeline-build">S25</span><div class="step-text"><b class="lang-fr">Intégration :</b><b class="lang-en">Assembly:</b> Usinage mécanique du typon, cambrage et soudure CMS.</div></li>
-                    <li><span class="step-badge timeline-build">S31-40</span><div class="step-text"><b class="lang-fr">Mesures :</b><b class="lang-en">Testing:</b> Campagne d'essais en étuve thermique, rapport DDV et soutenance.</div></li>
-                </ul>
-            </div>
+                <li><strong>EXIG_COUT :</strong> Enveloppe budgétaire stricte &lt; 20€, temps de conception de 40 heures.</li>
+            </ul>
+            <h3>Déroulement Temporel</h3>
+            <ul class="modal-timeline">
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Initialisation :</b><b class="lang-en">Kickoff:</b> Répartition des blocs de tâches et planification globale.</div></li>
+                <li><span class="step-badge timeline-study">S3</span><div class="step-text"><b class="lang-fr">Recherche :</b><b class="lang-en">Research:</b> Choix des composants d'acquisition et amplificateurs.</div></li>
+                <li><span class="step-badge timeline-design">S14-19</span><div class="step-text"><b class="lang-fr">Conception :</b><b class="lang-en">Design:</b> Simulations de dérives, routage CAO et validation du DDC.</div></li>
+                <li><span class="step-badge timeline-build">S25</span><div class="step-text"><b class="lang-fr">Intégration :</b><b class="lang-en">Assembly:</b> Usinage mécanique du typon, cambrage et soudure CMS.</div></li>
+                <li><span class="step-badge timeline-build">S31-40</span><div class="step-text"><b class="lang-fr">Mesures :</b><b class="lang-en">Testing:</b> Campagne d'essais en étuve thermique, rapport DDV et soutenance.</div></li>
+            </ul>
         </div>
+    </div>
 
-        <div id="modal-kart" class="modal">
-            <div class="modal-content">
-                <button class="close-modal" onclick="closeModal('modal-kart')">&times;</button>
-                <h2>Kart À Hélice Télécommandé (Protocole NEC)</h2>
-                
-                <div class="skills-container">
-                    <div class="skill-box concevoir">
-                        <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
-                        <ul>
-                            <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Analyse structurelle des architectures Émetteur/Récepteur et définition de la trame NEC 32-bits.</span><span class="lang-en">Architectural analysis of remote transceiver structures and link data protocols.</span></li>
-                            <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Calcul et choix des transistors de puissance pour générer un courant d'émission infrarouge >200mA.</span><span class="lang-en">Engineering calculations for peak driver transmission loops.</span></li>
-                            <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Affinage logiciel des routines de capture de signal (PWM, Timers STM32) sur platine de test.</span><span class="lang-en">Refining peripheral timing and register capture on testing setups.</span></li>
-                        </ul>
-                    </div>
-                    <div class="skill-box verifier">
-                        <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
-                        <ul>
-                            <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Planification du protocole de validation de la sécurité "Failsafe" et mesure de la portée utile (10m).</span><span class="lang-en">Drafting failsafe safe-state cutoff evaluations and range validation.</span></li>
-                            <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Diagnostic à l'oscilloscope numérique pour isoler et corriger les erreurs de décodage des bits.</span><span class="lang-en">Using logic instruments to inspect, target, and resolve bit mistakes.</span></li>
-                        </ul>
-                    </div>
+    <div id="modal-kart" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-kart')">&times;</button>
+            <h2>Kart À Hélice Télécommandé (Protocole NEC)</h2>
+            
+            <div class="skills-container">
+                <div class="skill-box concevoir">
+                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
+                    <ul>
+                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Analyse structurelle des architectures Émetteur/Récepteur et définition de la trame NEC 32-bits.</span><span class="lang-en">Architectural analysis of remote transceiver structures and link data protocols.</span></li>
+                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Calcul et choix des transistors de puissance pour générer un courant d'émission infrarouge >200mA.</span><span class="lang-en">Engineering calculations for peak driver transmission loops.</span></li>
+                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Affinage logiciel des routines de capture de signal (PWM, Timers STM32) sur platine de test.</span><span class="lang-en">Refining peripheral timing and register capture on testing setups.</span></li>
+                    </ul>
                 </div>
-
-                <div class="modal-images">
-                    <img src="images/carte emetteur de face.jpg" alt="Émetteur Vue Face">
-                    <img src="images/carte recepteur.jpg" alt="Récepteur Intégration">
-                    <img src="images/carte emetteur de dos.jpg" alt="Émetteur Vue Dos">
+                <div class="skill-box verifier">
+                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
+                    <ul>
+                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Planification du protocole de validation de la sécurité "Failsafe" et mesure de la portée utile (10m).</span><span class="lang-en">Drafting failsafe safe-state cutoff evaluations and range validation.</span></li>
+                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Diagnostic à l'oscilloscope numérique pour isoler et corriger les erreurs de décodage des bits.</span><span class="lang-en">Using logic instruments to inspect, target, and resolve bit mistakes.</span></li>
+                    </ul>
                 </div>
-
-                <h3>Cahier des Charges</h3>
-                <p class="lang-fr">Développement matériel et logiciel complet d'un système de modélisme (Émetteur et Récepteur) contrôlé sans fil.</p>
-                <p class="lang-en">Full hardware and software development of a wireless remote-controlled vehicle platform.</p>
-                
-                <ul class="req-list">
-                    <li><strong>EXIG_EMETTEUR :</strong> Encombrement 120x80mm, accus LiPo 2S, 2 potentiomètres (Vitesse, Servomoteur) et 1 bouton Klaxon.</li>
-                    <li><strong>EXIG_TRAME :</strong> Encodage d'une trame infrarouge NEC 32 bits (Adresse équipe, Direction 5 bits, Puissance 3 bits).</li>
-                    <li><strong>EXIG_RECEPTEUR :</strong> PCB 100x75mm, contrôle d'intégrité de trame et gestion des sécurités.</li>
-                    <li><strong>EXIG_SECURITE : "Failsafe"</strong> intégré coupant instantanément la puissance moteur en cas de perte du faisceau optique.</li>
-                    <li><strong>EXIG_ACTIONNEURS :</strong> Signaux PWM pour variateur Brushless et servomoteur (+/-30°), signal carré à 4kHz pour avertisseur sonore.</li>
-                    <li><strong>EXIG_COUT :</strong> Budget maximal de 160€ TTC, délai global de réalisation de 58 heures.</li>
-                </ul>
-
-                <h3>Déroulement Temporel</h3>
-                <ul class="modal-timeline">
-                    <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Cadrage :</b><b class="lang-en">Cadrage:</b> Définition de l'architecture fonctionnelle Élec/Info.</div></li>
-                    <li><span class="step-badge timeline-study">S3-18</span><div class="step-text"><b class="lang-fr">Étude :</b><b class="lang-en">Study:</b> Calculs d'émission IR (&gt;200mA crête) et modélisation algorithmique.</div></li>
-                    <li><span class="step-badge timeline-design">S23-33</span><div class="step-text"><b class="lang-fr">Routage :</b><b class="lang-en">CAD:</b> Dessin des circuits imprimés et programmation des modules d'interruption.</div></li>
-                    <li><span class="step-badge timeline-build">S35</span><div class="step-text"><b class="lang-fr">Soudure & Flash :</b><b class="lang-en">Assembly:</b> Câblage des cartes, implémentation C++ et configuration Timers.</div></li>
-                    <li><span class="step-badge timeline-build">S43-58</span><div class="step-text"><b class="lang-fr">Essais :</b><b class="lang-en">Tests:</b> Validation de la portée à 10m, écriture du DDV et démonstration dynamique.</div></li>
-                </ul>
             </div>
-        </div>
 
-        <div id="modal-main" class="modal">
-            <div class="modal-content">
-                <button class="close-modal" onclick="closeModal('modal-main')">&times;</button>
-                <h2>Main Robotique Motorisée - DU Santé</h2>
-                
-                <div class="skills-container">
-                    <div class="skill-box concevoir">
-                        <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
-                        <ul>
-                            <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Traduction du besoin prothétique médical en grandeurs physiques et angles de servomoteurs.</span><span class="lang-en">Converting anatomical needs into operational control coordinates.</span></li>
-                            <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Développement sous CATIA des architectures géométriques des phalanges articulées.</span><span class="lang-en">Modeling mechanical finger segments inside advanced CAD solutions.</span></li>
-                            <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Validation et correction des formes par impression 3D successive de maquettes d'études.</span><span class="lang-en">Validating shapes through sequential structural printing.</span></li>
-                        </ul>
-                    </div>
-                    <div class="skill-box verifier">
-                        <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
-                        <ul>
-                            <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Élaboration du protocole d'acquisition et filtrage logiciel des signaux myoélectriques.</span><span class="lang-en">Drafting biometric signal capture and software digital filter test steps.</span></li>
-                            <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Campagne de tests d'ajustement réels des capteurs sur l'avant-bras et calibration fine de la réactivité des doigts.</span><span class="lang-en">Testing sensors on forearm to fix target motion tracking errors.</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="modal-images">
-                    <img src="images/MAIN ROBOT .png" alt="Aperçu Prothèse">
-                </div>
-
-                <h3>Présentation du Projet</h3>
-                <p class="lang-fr">Conception interdisciplinaire d'une prothèse de main articulée programmable, reliant l'ingénierie au domaine médical.</p>
-                <p class="lang-en">Interdisciplinary design of an open articulated programmable hand prosthesis, linking engineering and modern medicine.</p>
-                
-                <ul class="req-list">
-                    <li>
-                        <strong><span class="lang-fr">Modélisation CAO :</span><span class="lang-en">CAD Modeling:</span></strong> 
-                        <span class="lang-fr">Conception géométrique et modélisation complète des doigts de la main sur le logiciel <b>CATIA</b>.</span>
-                        <span class="lang-en">Geometric design and complete modeling of the hand fingers using <b>CATIA</b> software.</span>
-                    </li>
-                    <li>
-                        <strong><span class="lang-fr">Interface Myoélectrique :</span><span class="lang-en">Myoelectric Interface:</span></strong> 
-                        <span class="lang-fr">Utilisation de capteurs positionnés sur l'avant-bras pour détecter l'activité musculaire et piloter les mouvements.</span>
-                        <span class="lang-en">Use of sensors placed on the forearm to detect muscle activity and drive finger movements.</span>
-                    </li>
-                    <li>
-                        <strong><span class="lang-fr">Programmation Arduino :</span><span class="lang-en">Arduino Programming:</span></strong> 
-                        <span class="lang-fr">Développement d'algorithmes lors de séances de codage pour traduire les signaux des capteurs en angles pour les servomoteurs des doigts.</span>
-                        <span class="lang-en">Development of algorithms during coding sessions to map sensor data to servo motor angles.</span>
-                    </li>
-                    <li>
-                        <strong><span class="lang-fr">Synergie Inter-groupes :</span><span class="lang-en">Cross-team Synergy:</span></strong> 
-                        <span class="lang-fr">Collaboration étroite avec le <b>groupe Robotique</b> pour l'assemblage mécanique final et l'intégration matérielle de la main.</span>
-                        <span class="lang-en">Close collaboration with the <b>Robotics team</b> for final mechanical assembly and hardware integration.</span>
-                    </li>
-                </ul>
-
-                <h3>Déroulement Temporel</h3>
-                <ul class="modal-timeline">
-                    <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Étude & Conception :</b><b class="lang-en">Study & Design:</b> Modélisation 3D des pièces de la main sur le logiciel CATIA.</div></li>
-                    <li><span class="step-badge timeline-study">S2</span><div class="step-text"><b class="lang-fr">Séances Arduino :</b><b class="lang-en">Arduino Sessions:</b> Développement du code de contrôle et traitement des signaux d'acquisition.</div></li>
-                    <li><span class="step-badge timeline-design">S3</span><div class="step-text"><b class="lang-fr">Tests d'Ajustement :</b><b class="lang-en">Adjustment Tests:</b> Intégration et étalonnage des capteurs placés sur l'avant-bras pour le contrôle des doigts.</div></li>
-                    <li><span class="step-badge timeline-build">S4</span><div class="step-text"><b class="lang-fr">Réalisation Collective :</b><b class="lang-en">Co-building:</b> Phase de fabrication finale et assemblage matériel menés en partenariat avec le groupe Robotique.</div></li>
-                </ul>
+            <div class="modal-images">
+                <img src="images/carte emetteur de face.jpg" alt="Émetteur Vue Face">
+                <img src="images/carte recepteur.jpg" alt="Récepteur Intégration">
+                <img src="images/carte emetteur de dos.jpg" alt="Émetteur Vue Dos">
             </div>
+            <h3>Cahier des Charges</h3>
+            <p class="lang-fr">Développement matériel et logiciel complet d'un système de modélisme (Émetteur et Récepteur) contrôlé sans fil.</p>
+            <p class="lang-en">Full hardware and software development of a wireless remote-controlled vehicle platform.</p>
+            <ul class="req-list">
+                <li><strong>EXIG_EMETTEUR :</strong> Encombrement 120x80mm, accus LiPo 2S, 2 potentiomètres (Vitesse, Servomoteur) et 1 bouton Klaxon.</li>
+                <li><strong>EXIG_TRAME :</strong> Encodage d'une trame infrarouge NEC 32 bits (Adresse équipe, Direction 5 bits, Puissance 3 bits).</li>
+                <li><strong>EXIG_RECEPTEUR :</strong> PCB 100x75mm, contrôle d'intégrité de trame et gestion des sécurités.</li>
+                <li><strong>EXIG_SECURITE : "Failsafe"</strong> intégré coupant instantanément la puissance moteur en cas de perte du faisceau optique.</li>
+                <li><strong>EXIG_ACTIONNEURS :</strong> Signaux PWM pour variateur Brushless et servomoteur (+/-30°), signal carré à 4kHz pour avertisseur sonore.</li>
+                <li><strong>EXIG_COUT :</strong> Budget maximal de 160€ TTC, délai global de réalisation de 58 heures.</li>
+            </ul>
+            <h3>Déroulement Temporel</h3>
+            <ul class="modal-timeline">
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Cadrage :</b><b class="lang-en">Cadrage:</b> Définition de l'architecture fonctionnelle Élec/Info.</div></li>
+                <li><span class="step-badge timeline-study">S3-18</span><div class="step-text"><b class="lang-fr">Étude :</b><b class="lang-en">Study:</b> Calculs d'émission IR (&gt;200mA crête) et modélisation algorithmique.</div></li>
+                <li><span class="step-badge timeline-design">S23-33</span><div class="step-text"><b class="lang-fr">Routage :</b><b class="lang-en">CAD:</b> Dessin des circuits imprimés et programmation des modules d'interruption.</div></li>
+                <li><span class="step-badge timeline-build">S35</span><div class="step-text"><b class="lang-fr">Soudure & Flash :</b><b class="lang-en">Assembly:</b> Câblage des cartes, implémentation C++ et configuration Timers.</div></li>
+                <li><span class="step-badge timeline-build">S43-58</span><div class="step-text"><b class="lang-fr">Essais :</b><b class="lang-en">Tests:</b> Validation de la portée à 10m, écriture du DDV et démonstration dynamique.</div></li>
+            </ul>
         </div>
-    </main>
+    </div>
+
+    <div id="modal-main" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-main')">&times;</button>
+            <h2>Main Robotique Motorisée - DU Santé</h2>
+            
+            <div class="skills-container">
+                <div class="skill-box concevoir">
+                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
+                    <ul>
+                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Traduction du besoin prothétique médical en grandeurs physiques et angles de servomoteurs.</span><span class="lang-en">Converting anatomical needs into operational control coordinates.</span></li>
+                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Développement sous CATIA des architectures géométriques des phalanges articulées.</span><span class="lang-en">Modeling mechanical finger segments inside advanced CAD solutions.</span></li>
+                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Validation et correction des formes par impression 3D successive de maquettes d'études.</span><span class="lang-en">Validating shapes through sequential structural printing.</span></li>
+                    </ul>
+                </div>
+                <div class="skill-box verifier">
+                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
+                    <ul>
+                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Élaboration du protocole d'acquisition et filtrage logiciel des signaux myoélectriques.</span><span class="lang-en">Drafting biometric signal capture and software digital filter test steps.</span></li>
+                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Campagne de tests d'ajustement réels des capteurs sur l'avant-bras et calibration fine de la réactivité des doigts.</span><span class="lang-en">Testing sensors on forearm to fix target motion tracking errors.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-images">
+                <img src="images/MAIN ROBOT .png" alt="Aperçu Prothèse">
+            </div>
+            <h3>Présentation du Projet</h3>
+            <p class="lang-fr">Conception interdisciplinaire d'une prothèse de main articulée programmable, reliant l'ingénierie au domaine médical.</p>
+            <p class="lang-en">Interdisciplinary design of an open articulated programmable hand prosthesis, linking engineering and modern medicine.</p>
+            
+            <ul class="req-list">
+                <li>
+                    <strong><span class="lang-fr">Modélisation CAO :</span><span class="lang-en">CAD Modeling:</span></strong> 
+                    <span class="lang-fr">Conception géométrique et modélisation complète des doigts de la main sur le logiciel <b>CATIA</b>.</span>
+                    <span class="lang-en">Geometric design and complete modeling of the hand fingers using <b>CATIA</b> software.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-fr">Interface Myoélectrique :</span><span class="lang-en">Myoelectric Interface:</span></strong> 
+                    <span class="lang-fr">Utilisation de capteurs positionnés sur l'avant-bras pour détecter l'activité musculaire et piloter les mouvements.</span>
+                    <span class="lang-en">Use of sensors placed on the forearm to detect muscle activity and drive finger movements.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-fr">Programmation Arduino :</span><span class="lang-en">Arduino Programming:</span></strong> 
+                    <span class="lang-fr">Développement d'algorithmes lors de séances de codage pour traduire les signaux des capteurs en angles pour les servomoteurs des doigts.</span>
+                    <span class="lang-en">Development of algorithms during coding sessions to map sensor data to servo motor angles.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-fr">Synergie Inter-groupes :</span><span class="lang-en">Cross-team Synergy:</span></strong> 
+                    <span class="lang-fr">Collaboration étroite avec le <b>groupe Robotique</b> pour l'assemblage mécanique final et l'intégration matérielle de la main.</span>
+                    <span class="lang-en">Close collaboration with the <b>Robotics team</b> for final mechanical assembly and hardware integration.</span>
+                </li>
+            </ul>
+
+            <h3>Déroulement Temporel</h3>
+            <ul class="modal-timeline">
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Étude & Conception :</b><b class="lang-en">Study & Design:</b> Modélisation 3D des pièces de la main sur le logiciel CATIA.</div></li>
+                <li><span class="step-badge timeline-study">S2</span><div class="step-text"><b class="lang-fr">Séances Arduino :</b><b class="lang-en">Arduino Sessions:</b> Développement du code de contrôle et traitement des signaux d'acquisition.</div></li>
+                <li><span class="step-badge timeline-design">S3</span><div class="step-text"><b class="lang-fr">Tests d'Ajustement :</b><b class="lang-en">Adjustment Tests:</b> Intégration et étalonnage des capteurs placés sur l'avant-bras pour le contrôle des doigts.</div></li>
+                <li><span class="step-badge timeline-build">S4</span><div class="step-text"><b class="lang-fr">Réalisation Collective :</b><b class="lang-en">Co-building:</b> Phase de fabrication finale et assemblage matériel menés en partenariat avec le groupe Robotique.</div></li>
+            </ul>
+        </div>
+    </div>
 
     <script>
         // Changement de page adaptatif
         function showPage(pageId) {
             document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) targetPage.classList.add('active');
+            document.getElementById(pageId).classList.add('active');
             window.scrollTo(0,0);
         }
 
         // Script de filtrage dynamique de l'onglet Compétences
         function filterSkills(category, button) {
+            // Gérer la classe active sur les boutons
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
+            // Filtrer les cartes
             const cards = document.querySelectorAll('.software-card');
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-cat') === category) {
@@ -771,19 +758,11 @@
         }
 
         // Modales 
-        function openModal(modalId) { 
-            document.getElementById(modalId).style.display = 'flex'; 
-        }
-        function closeModal(modalId) { 
-            document.getElementById(modalId).style.display = 'none'; 
-        }
-        window.onclick = function(e) { 
-            if (e.target.classList.contains('modal')) {
-                e.target.style.display = 'none'; 
-            }
-        }
+        function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; }
+        function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
+        window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.style.display = 'none'; }
 
-        // Système de Traduction FR / EN (Fix pour les éléments de type Block)
+        // Système de Traduction FR / EN
         function toggleLanguage() {
             const frElements = document.querySelectorAll('.lang-fr');
             const enElements = document.querySelectorAll('.lang-en');
@@ -791,10 +770,10 @@
 
             if (btn.innerText === "EN") {
                 frElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = ''); // Rétablit le display d'origine (block ou inline)
+                enElements.forEach(el => el.style.display = 'inline-block');
                 btn.innerText = "FR";
             } else {
-                frElements.forEach(el => el.style.display = ''); // Rétablit le display d'origine
+                frElements.forEach(el => el.style.display = 'inline-block');
                 enElements.forEach(el => el.style.display = 'none');
                 btn.innerText = "EN";
             }
