@@ -331,14 +331,14 @@
 
     <header>
         <nav>
-           <a onclick="showPage('home')"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
-<a onclick="showPage('parcours')"><span class="lang-fr">Parcours</span><span class="lang-en">Resume</span></a>
-<a onclick="showPage('competences')"><span class="lang-fr">Outils techniques</span><span class="lang-en">Technical Tools</span></a>            
-<a onclick="showPage('projets')"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
-<a href="images/CV_Louis_SAINTOUREIN.pdf.pdf" target="_blank" class="btn-cv">
-    <i class="fa-solid fa-file-pdf"></i>
-    <span class="lang-fr">Mon CV</span><span class="lang-en">My CV</span>
-</a>
+            <a onclick="showPage('home')"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
+            <a onclick="showPage('parcours')"><span class="lang-fr">Parcours</span><span class="lang-en">Resume</span></a>
+            <a onclick="showPage('competences')"><span class="lang-fr">Outils techniques</span><span class="lang-en">Technical Tools</span></a>
+            <a onclick="showPage('projets')"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
+            <a href="images/CV_Louis_SAINTOUREIN.pdf" target="_blank" class="btn-cv">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span class="lang-fr">Mon CV</span><span class="lang-en">My CV</span>
+            </a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=l.saintoureinpro@gmail.com" target="_blank" class="btn-contact"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a>
         </nav>
         <div class="header-btns">
@@ -362,7 +362,7 @@
         </div>
     </section>
 
-<section id="competences"> <h1 class="lang-fr">Outils techniques</h1> ```
+    <section id="competences">
         <h1 class="lang-fr">Outils techniques</h1>
         <h1 class="lang-en">Technical Tools</h1>
         
@@ -443,12 +443,12 @@
         </div>
     </section>
 
-<section id="projets">
+    <section id="projets">
         <h1 class="lang-fr">Projets Réalisés</h1>
         <h1 class="lang-en">Technical Projects</h1>
         <div class="project-grid">
             <div class="card" onclick="openModal('modal-rafale')">
-                <img src="images/carte rafale.png" alt="Rafale">
+                <img src="images/rafales3.png" alt="Rafale">
                 <div class="card-content">
                     <h3>Système Sonore & Lumineux Rafale</h3>
                     <p class="lang-fr">Conception pour maquette d'aéromodélisme nocturne.</p>
@@ -473,6 +473,7 @@
             </div>
         </div>
     </section>
+
     <section id="parcours">
         <div class="timeline">
             <div class="timeline-item">
@@ -497,17 +498,19 @@
         <div class="extra-container">
             <div class="extra-card">
                 <h3><i class="fa-solid fa-dumbbell"></i> <span class="lang-fr">Musculation</span><span class="lang-en">Weightlifting</span></h3>
-                <p class="lang-fr">Développement d'une grande rigueur personnelle, persévérance face à l'effort depuis octobre 2026  .</p>
-                <p class="lang-en">Develops self-discipline, perseverance through long tasks since October 2026 .</p>
+                <p class="lang-fr">Développement d'une grande rigueur personnelle, persévérance face à l'effort depuis octobre 2026.</p>
+                <p class="lang-en">Develops self-discipline, perseverance through long tasks since October 2026.</p>
             </div>
             <div class="extra-card">
                 <h3><i class="fa-solid fa-basketball"></i> <span class="lang-fr">Basket-ball</span><span class="lang-en">Basketball</span></h3>
-                <p class="lang-fr">Esprit d'équipe affirmé pendant 4 ans .</p>
+                <p class="lang-fr">Esprit d'équipe affirmé pendant 4 ans.</p>
                 <p class="lang-en">Strong team spirit for 4 years.</p>
             </div>
+        </div>
     </section>
 
-<div id="modal-rafale" class="modal">
+    <!-- MODAL : RAFALE -->
+    <div id="modal-rafale" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-rafale')">&times;</button>
             <h2>Système Sonore & Lumineux - Rafale Toy Corp</h2>
@@ -534,7 +537,6 @@
                 </div>
             </div>
 
-            <!-- Images modifiées -->
             <div class="modal-images">
                 <img src="images/rafales3.png" alt="Rafale 3">
                 <img src="images/carte rafale2.png" alt="Carte Rafale 2">
@@ -544,23 +546,7 @@
             <p class="lang-fr">Développer le système électronique embarqué autonome d'un planeur miniature pour des lancers nocturnes.</p>
             <ul class="req-list">
                 <li><strong>EXIG_ENCOMBREMENT :</strong> Max strict : 95mm x 40mm x H&lt;30mm.</li>
-                <li><strong>EXIG_AUTONOMIE :</strong> > 60s d'opération continue via alimentation sécurisée anti-crash (1.8V à 5.4V).</li>
-                <li><strong>EXIG_BRUIT :</strong> Signal pseudo-aléatoire variant de 280Hz à 780Hz proportionnel à la décharge de tension.</li>
-                <li><strong>EXIG_VISIBILITÉ :</strong> 2 LEDs fixes d'ailes et 1 LED de fuselage clignotante (période 1.9s, flash 0.1s).</li>
-                <li><strong>EXIG_COUT :</strong> Budget global &lt; 20€ par prototype, temps alloué restreint à 18 heures.</li>
-            </ul>
-        </div>
-    </div>
-
-            <div class="modal-images">
-                <img src="images/schéma rafale.png" alt="Schéma Rafale">
-                <img src="images/test de la carte rafale.png" alt="Test Prototype Rafale">
-            </div>
-            <h3>Cahier des Charges</h3>
-            <p class="lang-fr">Développer le système électronique embarqué autonome d'un planeur miniature pour des lancers nocturnes.</p>
-            <ul class="req-list">
-                <li><strong>EXIG_ENCOMBREMENT :</strong> Max strict : 95mm x 40mm x H&lt;30mm.</li>
-                <li><strong>EXIG_AUTONOMIE :</strong> > 60s d'opération continue via alimentation sécurisée anti-crash (1.8V à 5.4V).</li>
+                <li><strong>EXIG_AUTONOMIE :</strong> &gt; 60s d'opération continue via alimentation sécurisée anti-crash (1.8V à 5.4V).</li>
                 <li><strong>EXIG_BRUIT :</strong> Signal pseudo-aléatoire variant de 280Hz à 780Hz proportionnel à la décharge de tension.</li>
                 <li><strong>EXIG_VISIBILITÉ :</strong> 2 LEDs fixes d'ailes et 1 LED de fuselage clignotante (période 1.9s, flash 0.1s).</li>
                 <li><strong>EXIG_COUT :</strong> Budget global &lt; 20€ par prototype, temps alloué restreint à 18 heures.</li>
@@ -573,25 +559,24 @@
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-thermo')">&times;</button>
             <h2>Thermomètre De Bain pour Bébé</h2>
-            
             <p class="lang-fr" style="background: var(--surface); padding: 15px; border-radius: 10px; border-left: 4px solid var(--text-main);">
                 <strong>Mon rôle sur ce projet :</strong> J'ai fait principalement la partie vérification et la rédaction du Dossier de Conception (DCC).
             </p>
-
+            
             <div class="skills-container">
                 <div class="skill-box concevoir">
                     <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
                     <ul>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Sélection technique des amplificateurs et des comparateurs de seuils (+5°C à +50°C).</span></li>
-                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Affinage des calculs des ponts diviseurs de tension via maquettage et simulation Proteus.</span></li>
-                        <li><strong class="lang-fr">C.4 :</strong> <span class="lang-fr">Édition des plans de fabrication mécaniques et des typons du PCB double face (100x60mm).</span></li>
+                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Sélection technique des amplificateurs et des comparateurs de seuils (+5°C à +50°C).</span><span class="lang-en">Selection of specialized amplifiers and comparative operational blocks.</span></li>
+                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Affinage des calculs des ponts diviseurs de tension via maquettage et simulation Proteus.</span><span class="lang-en">Refining divider bridge networks using hardware circuit tracking.</span></li>
+                        <li><strong class="lang-fr">C.4 :</strong> <span class="lang-fr">Édition des plans de fabrication mécaniques et des typons du PCB double face (100x60mm).</span><span class="lang-en">Drafting manufacturing specifications for double-sided PCB layout.</span></li>
                     </ul>
                 </div>
                 <div class="skill-box verifier">
                     <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
                     <ul>
-                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Mise en œuvre d'une procédure d'essais métrologique rigoureuse en étuve thermique.</span></li>
-                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Ajustement et étalonnage des résistances pour caler les seuils d'alertes lumineuses (36°C et 39°C).</span></li>
+                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Mise en œuvre d'une procédure d'essais métrologique rigoureuse en étuve thermique.</span><span class="lang-en">Execution of precise thermal chamber test scripts.</span></li>
+                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Ajustement et étalonnage des résistances pour caler les seuils d'alertes lumineuses (36°C et 39°C).</span><span class="lang-en">Calibrating resistors to adjust precise status indicators.</span></li>
                     </ul>
                 </div>
             </div>
@@ -602,16 +587,26 @@
             </div>
             <h3>Cahier des Charges</h3>
             <p class="lang-fr">Concevoir une carte électronique étanche basse consommation d'un thermomètre de bain médical grand public.</p>
+            <p class="lang-en">Design a waterproof, low-power electronic board for a consumer bath medical thermometer device.</p>
             <ul class="req-list">
                 <li><strong>EXIG_DIMENSIONS :</strong> Circuit imprimé double face de 100mm x 60mm à 4 fixations.</li>
                 <li><strong>EXIG_AUTONOMIE :</strong> Fonctionnement continu &gt; 24h sur batterie LiPo 2S avec switch ON/OFF.</li>
                 <li><strong>EXIG_SEUILS :</strong> Analyse thermique de +5°C à +50°C. Alerte Eau Froide (&lt;36°C), Idéale (36°C-39°C) et Chaude (&gt;39°C).</li>
                 <li><strong>EXIG_IHM :</strong> Affichage direct via 3 voyants distincts étalonnés (Bleu, Vert, Rouge) à intensité de 50 mcd.</li>
+                <li><strong>EXIG_COUT :</strong> Enveloppe budgétaire stricte &lt; 20€, temps de conception de 40 heures.</li>
+            </ul>
+            <h3>Déroulement Temporel</h3>
+            <ul class="modal-timeline">
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Initialisation :</b><b class="lang-en">Kickoff:</b> Répartition des blocs de tâches et planification globale.</div></li>
+                <li><span class="step-badge timeline-study">S3</span><div class="step-text"><b class="lang-fr">Recherche :</b><b class="lang-en">Research:</b> Choix des composants d'acquisition et amplificateurs.</div></li>
+                <li><span class="step-badge timeline-design">S14-19</span><div class="step-text"><b class="lang-fr">Conception :</b><b class="lang-en">Design:</b> Simulations de dérives, routage CAO et validation du DDC.</div></li>
+                <li><span class="step-badge timeline-build">S25</span><div class="step-text"><b class="lang-fr">Intégration :</b><b class="lang-en">Assembly:</b> Usinage mécanique du typon, cambrage et soudure CMS.</div></li>
+                <li><span class="step-badge timeline-build">S31-40</span><div class="step-text"><b class="lang-fr">Mesures :</b><b class="lang-en">Testing:</b> Campagne d'essais en étuve thermique, rapport DDV et soutenance.</div></li>
             </ul>
         </div>
     </div>
 
-    <!-- MODAL : EXOSQUELETTE & DU TSS (Mis à jour d'après tes dossiers M. Morin) -->
+    <!-- MODAL : EXOSQUELETTE & DU TSS -->
     <div id="modal-main" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-main')">&times;</button>
@@ -666,57 +661,7 @@
         </div>
     </div>
 
-    <div id="modal-thermo" class="modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('modal-thermo')">&times;</button>
-            <h2>Thermomètre De Bain pour Bébé</h2>
-            <p class="lang-fr" style="background: var(--surface); padding: 15px; border-radius: 10px; border-left: 4px solid var(--text-main);">
-                <strong>Mon rôle sur ce projet :</strong> J'ai fait principalement la partie vérification et la rédaction du Dossier de Conception (DCC).
-            </p>
-            
-            <div class="skills-container">
-                <div class="skill-box concevoir">
-                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
-                    <ul>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Sélection technique des amplificateurs et des comparateurs de seuils (+5°C à +50°C).</span><span class="lang-en">Selection of specialized amplifiers and comparative operational blocks.</span></li>
-                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Affinage des calculs des ponts diviseurs de tension via maquettage et simulation Proteus.</span><span class="lang-en">Refining divider bridge networks using hardware circuit tracking.</span></li>
-                        <li><strong class="lang-fr">C.4 :</strong> <span class="lang-fr">Édition des plans de fabrication mécaniques et des typons du PCB double face (100x60mm).</span><span class="lang-en">Drafting manufacturing specifications for double-sided PCB layout.</span></li>
-                    </ul>
-                </div>
-                <div class="skill-box verifier">
-                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
-                    <ul>
-                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Mise en œuvre d'une procédure d'essais métrologique rigoureuse en étuve thermique.</span><span class="lang-en">Execution of precise thermal chamber test scripts.</span></li>
-                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Ajustement et étalonnage des résistances pour caler les seuils d'alertes lumineuses (36°C et 39°C).</span><span class="lang-en">Calibrating resistors to adjust precise status indicators.</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="modal-images">
-                <img src="images/verification thermometre.png" alt="Schéma Thermomètre">
-                <img src="images/verification thermometre 2.jpg" alt="Routage Thermomètre">
-            </div>
-            <h3>Cahier des Charges</h3>
-            <p class="lang-fr">Concevoir une carte électronique étanche basse consommation d'un thermomètre de bain médical grand public.</p>
-            <p class="lang-en">Design a waterproof, low-power electronic board for a consumer bath medical thermometer device.</p>
-            <ul class="req-list">
-                <li><strong>EXIG_DIMENSIONS :</strong> Circuit imprimé double face de 100mm x 60mm à 4 fixations.</li>
-                <li><strong>EXIG_AUTONOMIE :</strong> Fonctionnement continu &gt; 24h sur batterie LiPo 2S avec switch ON/OFF.</li>
-                <li><strong>EXIG_SEUILS :</strong> Analyse thermique de +5°C à +50°C. Alerte Eau Froide (&lt;36°C), Idéale (36°C-39°C) et Chaude (&gt;39°C).</li>
-                <li><strong>EXIG_IHM :</strong> Affichage direct via 3 voyants distincts étalonnés (Bleu, Vert, Rouge) à intensité de 50 mcd.</li>
-                <li><strong>EXIG_COUT :</strong> Enveloppe budgétaire stricte &lt; 20€, temps de conception de 40 heures.</li>
-            </ul>
-            <h3>Déroulement Temporel</h3>
-            <ul class="modal-timeline">
-                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Initialisation :</b><b class="lang-en">Kickoff:</b> Répartition des blocs de tâches et planification globale.</div></li>
-                <li><span class="step-badge timeline-study">S3</span><div class="step-text"><b class="lang-fr">Recherche :</b><b class="lang-en">Research:</b> Choix des composants d'acquisition et amplificateurs.</div></li>
-                <li><span class="step-badge timeline-design">S14-19</span><div class="step-text"><b class="lang-fr">Conception :</b><b class="lang-en">Design:</b> Simulations de dérives, routage CAO et validation du DDC.</div></li>
-                <li><span class="step-badge timeline-build">S25</span><div class="step-text"><b class="lang-fr">Intégration :</b><b class="lang-en">Assembly:</b> Usinage mécanique du typon, cambrage et soudure CMS.</div></li>
-                <li><span class="step-badge timeline-build">S31-40</span><div class="step-text"><b class="lang-fr">Mesures :</b><b class="lang-en">Testing:</b> Campagne d'essais en étuve thermique, rapport DDV et soutenance.</div></li>
-            </ul>
-        </div>
-    </div>
-
+    <!-- MODAL : KART (non lié à une carte pour l'instant) -->
     <div id="modal-kart" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-kart')">&times;</button>
@@ -730,7 +675,7 @@
                     <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
                     <ul>
                         <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Analyse structurelle des architectures Émetteur/Récepteur et définition de la trame NEC 32-bits.</span><span class="lang-en">Architectural analysis of remote transceiver structures and link data protocols.</span></li>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Calcul et choix des transistors de puissance pour générer un courant d'émission infrarouge >200mA.</span><span class="lang-en">Engineering calculations for peak driver transmission loops.</span></li>
+                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Calcul et choix des transistors de puissance pour générer un courant d'émission infrarouge &gt;200mA.</span><span class="lang-en">Engineering calculations for peak driver transmission loops.</span></li>
                         <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Affinage logiciel des routines de capture de signal (PWM, Timers STM32) sur platine de test.</span><span class="lang-en">Refining peripheral timing and register capture on testing setups.</span></li>
                     </ul>
                 </div>
@@ -770,9 +715,10 @@
         </div>
     </div>
 
-    <div id="modal-main" class="modal">
+    <!-- MODAL : MAIN ROBOTIQUE DU SANTÉ (non lié à une carte pour l'instant) -->
+    <div id="modal-main-sante" class="modal">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('modal-main')">&times;</button>
+            <button class="close-modal" onclick="closeModal('modal-main-sante')">&times;</button>
             <h2>Main Robotique Motorisée - DU Santé</h2>
             
             <div class="skills-container">
@@ -843,11 +789,9 @@
 
         // Script de filtrage dynamique de l'onglet Compétences
         function filterSkills(category, button) {
-            // Gérer la classe active sur les boutons
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // Filtrer les cartes
             const cards = document.querySelectorAll('.software-card');
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-cat') === category) {
