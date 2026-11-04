@@ -443,7 +443,7 @@
         </div>
     </section>
 
-    <section id="projets">
+<section id="projets">
         <h1 class="lang-fr">Projets Réalisés</h1>
         <h1 class="lang-en">Technical Projects</h1>
         <div class="project-grid">
@@ -463,25 +463,16 @@
                     <p class="lang-en">Low-power medical bath thermometer with comparative thresholds.</p>
                 </div>
             </div>
-            <div class="card" onclick="openModal('modal-kart')">
-                <img src="images/carte emetteur de face.jpg" alt="Kart">
-                <div class="card-content">
-                    <h3>Kart À Hélice (Protocole NEC)</h3>
-                    <p class="lang-fr">Télécommande Infrarouge et gestion de puissance moteur.</p>
-                    <p class="lang-en">Infrared remote control and brushless motor power tracking.</p>
-                </div>
-            </div>
             <div class="card" onclick="openModal('modal-main')">
-                <img src="images/MAIN ROBOT .png" alt="Main Robotique">
+                <img src="images/MAIN ROBOT .png" alt="Exosquelette & DU TSS">
                 <div class="card-content">
-                    <h3>Main Robotique (DU Santé)</h3>
-                    <p class="lang-fr">Prothèse motorisée articulée développée en équipe médicale.</p>
-                    <p class="lang-en">Motorized articulated prosthesis developed with healthcare goals.</p>
+                    <h3>Projet Exosquelette & Signaux (DU TSS)</h3>
+                    <p class="lang-fr">Étude biomécanique, électrophysiologie et modélisation.</p>
+                    <p class="lang-en">Biomechanics study, electrophysiology and modeling.</p>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="parcours">
         <div class="timeline">
             <div class="timeline-item">
@@ -516,28 +507,29 @@
             </div>
     </section>
 
-    <div id="modal-rafale" class="modal">
+<div id="modal-rafale" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-rafale')">&times;</button>
             <h2>Système Sonore & Lumineux - Rafale Toy Corp</h2>
+            
             <p class="lang-fr" style="background: var(--surface); padding: 15px; border-radius: 10px; border-left: 4px solid var(--text-main);">
                 <strong>Mon rôle sur ce projet :</strong> Je me suis occupé de la fabrication de la carte électronique et de la rédaction du Dossier de Conception (DCC) et du Dossier de Fabrication (DDF).
             </p>
-            
+
             <div class="skills-container">
                 <div class="skill-box concevoir">
                     <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
                     <ul>
-                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Identification des fonctions de l'oscillateur NE555 et du buzzer à la lecture du CDC.</span><span class="lang-en">Identification of NE555 oscillator functions from requirements.</span></li>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Proposition d'une structure analogique pour moduler le signal de 280Hz à 780Hz.</span><span class="lang-en">Proposal of an analog architecture to modulate signals.</span></li>
-                        <li><strong class="lang-fr">C.4 :</strong> <span class="lang-fr">Rédaction complète du Dossier de Conception (DDC) et saisie du routage PCB.</span><span class="lang-en">Drafting of full CAD Design Dossier and schematic tracking.</span></li>
+                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Identification des fonctions de l'oscillateur NE555 et du buzzer à la lecture du CDC.</span></li>
+                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Proposition d'une structure analogique pour moduler le signal de 280Hz à 780Hz.</span></li>
+                        <li><strong class="lang-fr">C.4 :</strong> <span class="lang-fr">Rédaction complète du Dossier de Conception (DDC) et saisie du routage PCB.</span></li>
                     </ul>
                 </div>
                 <div class="skill-box verifier">
                     <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
                     <ul>
-                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Élaboration de la procédure de test de décharge et de mesure de la période des flashs (1.9s).</span><span class="lang-en">Creation of discharge and flash interval test methods.</span></li>
-                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Vérification de l'encombrement limite (95x40mm) et correction des dérives de soudure.</span><span class="lang-en">Dimensional checking and physical soldering fix operations.</span></li>
+                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Élaboration de la procédure de test de décharge et de mesure de la période des flashs (1.9s).</span></li>
+                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Vérification de l'encombrement limite (95x40mm) et correction des dérives de soudure.</span></li>
                     </ul>
                 </div>
             </div>
@@ -548,22 +540,110 @@
             </div>
             <h3>Cahier des Charges</h3>
             <p class="lang-fr">Développer le système électronique embarqué autonome d'un planeur miniature pour des lancers nocturnes.</p>
-            <p class="lang-en">Develop the standalone embedded electronics of a small glider model for night operations.</p>
             <ul class="req-list">
-                <li>options...</li>
                 <li><strong>EXIG_ENCOMBREMENT :</strong> Max strict : 95mm x 40mm x H&lt;30mm.</li>
                 <li><strong>EXIG_AUTONOMIE :</strong> > 60s d'opération continue via alimentation sécurisée anti-crash (1.8V à 5.4V).</li>
                 <li><strong>EXIG_BRUIT :</strong> Signal pseudo-aléatoire variant de 280Hz à 780Hz proportionnel à la décharge de tension.</li>
                 <li><strong>EXIG_VISIBILITÉ :</strong> 2 LEDs fixes d'ailes et 1 LED de fuselage clignotante (période 1.9s, flash 0.1s).</li>
                 <li><strong>EXIG_COUT :</strong> Budget global &lt; 20€ par prototype, temps alloué restreint à 18 heures.</li>
             </ul>
+        </div>
+    </div>
+
+    <!-- MODAL : THERMOMÈTRE -->
+    <div id="modal-thermo" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-thermo')">&times;</button>
+            <h2>Thermomètre De Bain pour Bébé</h2>
+            
+            <p class="lang-fr" style="background: var(--surface); padding: 15px; border-radius: 10px; border-left: 4px solid var(--text-main);">
+                <strong>Mon rôle sur ce projet :</strong> J'ai fait principalement la partie vérification et la rédaction du Dossier de Conception (DCC).
+            </p>
+
+            <div class="skills-container">
+                <div class="skill-box concevoir">
+                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
+                    <ul>
+                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Sélection technique des amplificateurs et des comparateurs de seuils (+5°C à +50°C).</span></li>
+                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Affinage des calculs des ponts diviseurs de tension via maquettage et simulation Proteus.</span></li>
+                        <li><strong class="lang-fr">C.4 :</strong> <span class="lang-fr">Édition des plans de fabrication mécaniques et des typons du PCB double face (100x60mm).</span></li>
+                    </ul>
+                </div>
+                <div class="skill-box verifier">
+                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
+                    <ul>
+                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Mise en œuvre d'une procédure d'essais métrologique rigoureuse en étuve thermique.</span></li>
+                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Ajustement et étalonnage des résistances pour caler les seuils d'alertes lumineuses (36°C et 39°C).</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-images">
+                <img src="images/verification thermometre.png" alt="Schéma Thermomètre">
+                <img src="images/verification thermometre 2.jpg" alt="Routage Thermomètre">
+            </div>
+            <h3>Cahier des Charges</h3>
+            <p class="lang-fr">Concevoir une carte électronique étanche basse consommation d'un thermomètre de bain médical grand public.</p>
+            <ul class="req-list">
+                <li><strong>EXIG_DIMENSIONS :</strong> Circuit imprimé double face de 100mm x 60mm à 4 fixations.</li>
+                <li><strong>EXIG_AUTONOMIE :</strong> Fonctionnement continu &gt; 24h sur batterie LiPo 2S avec switch ON/OFF.</li>
+                <li><strong>EXIG_SEUILS :</strong> Analyse thermique de +5°C à +50°C. Alerte Eau Froide (&lt;36°C), Idéale (36°C-39°C) et Chaude (&gt;39°C).</li>
+                <li><strong>EXIG_IHM :</strong> Affichage direct via 3 voyants distincts étalonnés (Bleu, Vert, Rouge) à intensité de 50 mcd.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MODAL : EXOSQUELETTE & DU TSS (Mis à jour d'après tes dossiers M. Morin) -->
+    <div id="modal-main" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-main')">&times;</button>
+            <h2>Projet Exosquelette & Signaux - DU TSS (Encadrement M. Morin)</h2>
+            
+            <div class="skills-container">
+                <div class="skill-box concevoir">
+                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
+                    <ul>
+                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Étude et conception fonctionnelle orientée vers les exosquelettes et l'assistance gestuelle.</span></li>
+                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Modélisation géométrique et intégration de structures articulées (CATIA).</span></li>
+                    </ul>
+                </div>
+                <div class="skill-box verifier">
+                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
+                    <ul>
+                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Analyse des signaux électrophysiologiques et de la contraction musculaire.</span></li>
+                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Étude des réponses physiologiques et du système cardiovasculaire appliqués à l'effort.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-images">
+                <img src="images/MAIN ROBOT .png" alt="Aperçu Projet Exosquelette">
+            </div>
+
+            <h3>Présentation du Projet & Axes d'Étude</h3>
+            <p class="lang-fr">Projet interdisciplinaire (DU TSS) encadré par M. Morin, axé sur l'interaction homme-machine à travers l'étude des exosquelettes et de la physiologie humaine.</p>
+            
+            <ul class="req-list">
+                <li>
+                    <strong>Les Exosquelettes :</strong> 
+                    <span>Étude des technologies d'assistance physique, de la compensation des efforts et de la restitution de puissance mécanique.</span>
+                </li>
+                <li>
+                    <strong>Signaux Électrophysiologiques :</strong> 
+                    <span>Acquisition, traitement et analyse des signaux électriques issus de l'activité musculaire (type EMG).</span>
+                </li>
+                <li>
+                    <strong>Physiologie (Contraction Musculaire & Cardiovasculaire) :</strong> 
+                    <span>Compréhension des mécanismes de contraction des fibres musculaires et suivi de la réponse du système cardiovasculaire lors de l'effort avec l'exosquelette.</span>
+                </li>
+            </ul>
+
             <h3>Déroulement Temporel</h3>
             <ul class="modal-timeline">
-                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Lancement :</b><b class="lang-en">Launch:</b> Analyse du CDC et planification des rôles.</div></li>
-                <li><span class="step-badge timeline-study">S2</span><div class="step-text"><b class="lang-fr">Étude :</b><b class="lang-en">Study:</b> Calculs théoriques et simulation de l'oscillateur NE555.</div></li>
-                <li><span class="step-badge timeline-design">S5</span><div class="step-text"><b class="lang-fr">Conception :</b><b class="lang-en">Design:</b> Saisie de schéma, routage PCB et rédaction du DDC.</div></li>
-                <li><span class="step-badge timeline-build">S10</span><div class="step-text"><b class="lang-fr">Fabrication :</b><b class="lang-en">Manufacturing:</b> Gravure chimique, perçage et soudage en atelier.</div></li>
-                <li><span class="step-badge timeline-build">S15-18</span><div class="step-text"><b class="lang-fr">Validation :</b><b class="lang-en">Validation:</b> Tests d'autonomie, relevés de mesures (DDV) et clôture.</div></li>
+                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b>Recherche :</b> Étude bibliographique des exosquelettes et des besoins en rééducation/assistance.</div></li>
+                <li><span class="step-badge timeline-study">S2</span><div class="step-text"><b>Physiologie :</b> Analyse des signaux électrophysiologiques et de la contraction musculaire.</div></li>
+                <li><span class="step-badge timeline-design">S3</span><div class="step-text"><b>Conception :</b> Modélisation 3D et intégration des actionneurs/capteurs.</div></li>
+                <li><span class="step-badge timeline-build">S4</span><div class="step-text"><b>Évaluation :</b> Tests d'efforts, mesures cardiovasculaires et validation globale du prototype.</div></li>
             </ul>
         </div>
     </div>
