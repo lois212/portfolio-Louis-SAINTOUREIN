@@ -9,7 +9,7 @@
     <style>
         /* --- DESIGN SYSTEM PERSONNALISÉ --- */
         :root {
-            --bg: #ccd5ae ; /* Couleur mode clair */
+            --bg: #ccd5ae ;
             --surface: #e9edc9;
             --text-main: #344e41;
             --text-muted: #3a5a40;
@@ -18,8 +18,6 @@
             --border: rgba(52, 78, 65, 0.2);
             --modal-overlay: rgba(0, 0, 0, 0.3);
             --shadow: 0 4px 15px rgba(0,0,0,0.05);
-            
-            /* Badges Compétences */
             --badge-concevoir: #ae2012;
             --badge-verifier: #e9d8a6;
             --badge-verifier-text: #005f73;
@@ -28,7 +26,7 @@
         }
 
         [data-theme="dark"] {
-            --bg: #606c38; /* Couleur mode sombre */
+            --bg: #606c38;
             --surface: #3a5a40;
             --text-main: #dad7cd;
             --text-muted: #a3b18a;
@@ -37,7 +35,6 @@
             --border: rgba(218, 215, 205, 0.2);
             --modal-overlay: rgba(0, 0, 0, 0.5);
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            
             --badge-concevoir: #ca6702;
             --badge-verifier: #94d2bd;
             --badge-verifier-text: #001219;
@@ -118,7 +115,7 @@
         section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- ACCUEIL (TEXTE CENTRÉ) --- */
+        /* --- ACCUEIL --- */
         .hero { text-align: center; margin-top: 10vh; }
         .hero h1 { font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; }
         .hero p { font-size: 22px; color: var(--text-muted); max-width: 800px; margin: 0 auto 40px; }
@@ -136,6 +133,8 @@
 
         /* --- PROJETS --- */
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .group-title { margin: 50px 0 5px 0; font-size: 26px; font-weight: 800; }
+        .group-sub { margin: 0 0 25px 0; color: var(--text-muted); font-size: 15px; }
         .card {
             background: var(--surface);
             border-radius: 20px;
@@ -146,8 +145,18 @@
         .card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
         .card img { width: 100%; height: 200px; object-fit: cover; }
         .card-content { padding: 25px; }
+        .sem-tag {
+            display: inline-block;
+            background: var(--text-main);
+            color: var(--bg);
+            font-size: 12px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
 
-        /* --- PAGE COMPÉTENCES (STYLE DASHBOARD) --- */
+        /* --- PAGE COMPÉTENCES --- */
         .skills-layout {
             display: grid;
             grid-template-columns: 240px 1fr;
@@ -158,11 +167,7 @@
             .skills-layout { grid-template-columns: 1fr; gap: 20px; }
             .filter-sidebar { flex-direction: row; flex-wrap: wrap; justify-content: center; }
         }
-        .filter-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+        .filter-sidebar { display: flex; flex-direction: column; gap: 12px; }
         .filter-title {
             font-weight: 800;
             font-size: 14px;
@@ -207,25 +212,11 @@
             box-shadow: var(--shadow);
         }
         .software-card:hover { transform: translateY(-5px); }
-        .software-card img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-        .software-card h4 {
-            margin: 0;
-            font-size: 15px;
-            font-weight: 800;
-        }
-        .software-card span {
-            font-size: 12px;
-            opacity: 0.7;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
+        .software-card img { width: 55px; height: 55px; object-fit: contain; border-radius: 8px; }
+        .software-card h4 { margin: 0; font-size: 15px; font-weight: 800; }
+        .software-card span { font-size: 12px; opacity: 0.7; font-weight: 600; text-transform: uppercase; }
 
-        /* --- MODALES & IMAGES PAYSAGE --- */
+        /* --- MODALES --- */
         .modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--modal-overlay); z-index: 1000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(5px);
@@ -262,7 +253,7 @@
         .req-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
         .req-list li::before { content: "→"; color: var(--text-main); position: absolute; left: 0; font-weight: 800; }
 
-        /* --- BLOCS DE COMPÉTENCES GEII --- */
+        /* --- BLOCS DE COMPÉTENCES --- */
         .skills-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -271,11 +262,7 @@
         }
         @media (max-width: 600px) { .skills-container { grid-template-columns: 1fr; } }
         
-        .skill-box {
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid var(--border);
-        }
+        .skill-box { padding: 20px; border-radius: 15px; border: 1px solid var(--border); }
         .skill-box.concevoir { background: rgba(174, 32, 18, 0.08); border-left: 5px solid var(--badge-concevoir); }
         .skill-box.verifier { background: rgba(233, 216, 166, 0.15); border-left: 5px solid var(--badge-verifier); }
         
@@ -330,7 +317,6 @@
         }
         .extra-card h3 { margin: 0 0 10px 0; display: flex; align-items: center; gap: 10px; font-size: 18px; }
 
-        /* Gestion de l'anglais masqué par défaut */
         .lang-en { display: none; }
     </style>
 </head>
@@ -391,13 +377,11 @@
                     <h4>Proteus</h4>
                     <span>Électronique</span>
                 </div>
-                
                 <div class="software-card" data-cat="automatisme">
                     <img src="images/TIA Portal.jpg" alt="TIA Portal">
                     <h4>TIA Portal</h4>
                     <span>Automatisme</span>
                 </div>
-
                 <div class="software-card" data-cat="informatique">
                     <img src="images/STM32.png" alt="STM32 CubeMX">
                     <h4>STM32 CubeMX</h4>
@@ -408,7 +392,6 @@
                     <h4>Arduino</h4>
                     <span>Informatique</span>
                 </div>
-
                 <div class="software-card" data-cat="bureautique">
                     <img src="images/EXCEL.png" alt="Excel">
                     <h4>Excel</h4>
@@ -429,13 +412,11 @@
                     <h4>Google Drive</h4>
                     <span>Bureautique</span>
                 </div>
-
                 <div class="software-card" data-cat="energie">
                     <img src="images/WinRelais.png" alt="WinRelais">
                     <h4>WinRelais</h4>
                     <span>Énergie</span>
                 </div>
-
                 <div class="software-card" data-cat="sae">
                     <img src="images/ares.jpg" alt="ARES">
                     <h4>ARES</h4>
@@ -453,6 +434,8 @@
     <section id="projets">
         <h1 class="lang-fr">Projets Réalisés</h1>
         <h1 class="lang-en">Technical Projects</h1>
+
+        <h2 class="group-title"><span class="lang-fr">Projets SAÉ</span><span class="lang-en">SAÉ Projects</span></h2>
         <div class="project-grid">
             <div class="card" onclick="openModal('modal-rafale')">
                 <img src="images/rafales3.png" alt="Rafale">
@@ -470,12 +453,37 @@
                     <p class="lang-en">Low-power medical bath thermometer with comparative thresholds.</p>
                 </div>
             </div>
-            <div class="card" onclick="openModal('modal-main')">
-                <img src="images/MAIN ROBOT .png" alt="Exosquelette & DU TSS">
+        </div>
+
+        <h2 class="group-title">DU TSS</h2>
+        <p class="group-sub lang-fr">Un projet par semestre.</p>
+        <p class="group-sub lang-en">One project per semester.</p>
+        <div class="project-grid">
+            <div class="card" onclick="openModal('modal-tss-s1')">
+                <img src="images/main_robot.png" alt="Main robotique">
                 <div class="card-content">
-                    <h3>Projet Exosquelette & Signaux (DU TSS)</h3>
-                    <p class="lang-fr">Semestre 2 : étude biomécanique, électrophysiologie et modélisation.</p>
-                    <p class="lang-en">Semester 2: biomechanics study, electrophysiology and modeling.</p>
+                    <span class="sem-tag"><span class="lang-fr">Semestre 1</span><span class="lang-en">Semester 1</span></span>
+                    <h3>Main Robotique Motorisée</h3>
+                    <p class="lang-fr">Prothèse de main commandée par capteurs myoélectriques.</p>
+                    <p class="lang-en">Hand prosthesis driven by myoelectric sensors.</p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal('modal-tss-s2')">
+                <img src="images/capteursemestre2.png" alt="BabyAir">
+                <div class="card-content">
+                    <span class="sem-tag"><span class="lang-fr">Semestre 2</span><span class="lang-en">Semester 2</span></span>
+                    <h3>BabyAir</h3>
+                    <p class="lang-fr">Boîtier équipé d'un capteur.</p>
+                    <p class="lang-en">Enclosure fitted with a sensor.</p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal('modal-tss-s3')">
+                <img src="images/exosquelette.png" alt="Exosquelette">
+                <div class="card-content">
+                    <span class="sem-tag"><span class="lang-fr">Semestre 3</span><span class="lang-en">Semester 3</span></span>
+                    <h3>Exosquelette & Signaux</h3>
+                    <p class="lang-fr">Étude biomécanique, électrophysiologie et modélisation.</p>
+                    <p class="lang-en">Biomechanics study, electrophysiology and modeling.</p>
                 </div>
             </div>
         </div>
@@ -613,18 +621,102 @@
         </div>
     </div>
 
-    <!-- MODAL : EXOSQUELETTE & DU TSS (Semestre 2 uniquement) -->
-    <div id="modal-main" class="modal">
+    <!-- MODAL : DU TSS - SEMESTRE 1 : LA MAIN -->
+    <div id="modal-tss-s1" class="modal">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('modal-main')">&times;</button>
-            <h2>Projet Exosquelette & Signaux - DU TSS (Encadrement M. Morin)</h2>
+            <button class="close-modal" onclick="closeModal('modal-tss-s1')">&times;</button>
+            <h2>Main Robotique Motorisée - DU TSS (Semestre 1)</h2>
 
-            <p class="lang-fr info-banner">
-                <strong>Période :</strong> Ce projet s'est déroulé uniquement durant le <strong>second semestre</strong>.
-            </p>
-            <p class="lang-en info-banner">
-                <strong>Period:</strong> This project took place during the <strong>second semester</strong> only.
-            </p>
+            <p class="lang-fr info-banner"><strong>Période :</strong> Projet réalisé durant le <strong>semestre 1</strong>.</p>
+            <p class="lang-en info-banner"><strong>Period:</strong> Project carried out during <strong>semester 1</strong>.</p>
+            
+            <div class="skills-container">
+                <div class="skill-box concevoir">
+                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
+                    <ul>
+                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Traduction du besoin prothétique médical en grandeurs physiques et angles de servomoteurs.</span><span class="lang-en">Converting anatomical needs into operational control coordinates.</span></li>
+                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Développement sous CATIA des architectures géométriques des phalanges articulées.</span><span class="lang-en">Modeling mechanical finger segments inside advanced CAD solutions.</span></li>
+                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Validation et correction des formes par impression 3D successive de maquettes d'études.</span><span class="lang-en">Validating shapes through sequential structural printing.</span></li>
+                    </ul>
+                </div>
+                <div class="skill-box verifier">
+                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
+                    <ul>
+                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Élaboration du protocole d'acquisition et filtrage logiciel des signaux myoélectriques.</span><span class="lang-en">Drafting biometric signal capture and software digital filter test steps.</span></li>
+                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Campagne de tests d'ajustement réels des capteurs sur l'avant-bras et calibration fine de la réactivité des doigts.</span><span class="lang-en">Testing sensors on forearm to fix target motion tracking errors.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-images">
+                <img src="images/main_robot.png" alt="Aperçu Prothèse">
+            </div>
+            <h3>Présentation du Projet</h3>
+            <p class="lang-fr">Conception interdisciplinaire d'une prothèse de main articulée programmable, reliant l'ingénierie au domaine médical.</p>
+            <p class="lang-en">Interdisciplinary design of an open articulated programmable hand prosthesis, linking engineering and modern medicine.</p>
+            
+            <ul class="req-list">
+                <li>
+                    <strong><span class="lang-fr">Modélisation CAO :</span><span class="lang-en">CAD Modeling:</span></strong> 
+                    <span class="lang-fr">Conception géométrique et modélisation complète des doigts de la main sur le logiciel <b>CATIA</b>.</span>
+                    <span class="lang-en">Geometric design and complete modeling of the hand fingers using <b>CATIA</b> software.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-fr">Interface Myoélectrique :</span><span class="lang-en">Myoelectric Interface:</span></strong> 
+                    <span class="lang-fr">Utilisation de capteurs positionnés sur l'avant-bras pour détecter l'activité musculaire et piloter les mouvements.</span>
+                    <span class="lang-en">Use of sensors placed on the forearm to detect muscle activity and drive finger movements.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-fr">Programmation Arduino :</span><span class="lang-en">Arduino Programming:</span></strong> 
+                    <span class="lang-fr">Développement d'algorithmes lors de séances de codage pour traduire les signaux des capteurs en angles pour les servomoteurs des doigts.</span>
+                    <span class="lang-en">Development of algorithms during coding sessions to map sensor data to servo motor angles.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-fr">Synergie Inter-groupes :</span><span class="lang-en">Cross-team Synergy:</span></strong> 
+                    <span class="lang-fr">Collaboration étroite avec le <b>groupe Robotique</b> pour l'assemblage mécanique final et l'intégration matérielle de la main.</span>
+                    <span class="lang-en">Close collaboration with the <b>Robotics team</b> for final mechanical assembly and hardware integration.</span>
+                </li>
+            </ul>
+
+            <h3>Déroulement (Semestre 1)</h3>
+            <ul class="modal-timeline">
+                <li><span class="step-badge timeline-launch">1</span><div class="step-text"><b class="lang-fr">Étude & Conception :</b><b class="lang-en">Study & Design:</b> Modélisation 3D des pièces de la main sur le logiciel CATIA.</div></li>
+                <li><span class="step-badge timeline-study">2</span><div class="step-text"><b class="lang-fr">Séances Arduino :</b><b class="lang-en">Arduino Sessions:</b> Développement du code de contrôle et traitement des signaux d'acquisition.</div></li>
+                <li><span class="step-badge timeline-design">3</span><div class="step-text"><b class="lang-fr">Tests d'Ajustement :</b><b class="lang-en">Adjustment Tests:</b> Intégration et étalonnage des capteurs placés sur l'avant-bras pour le contrôle des doigts.</div></li>
+                <li><span class="step-badge timeline-build">4</span><div class="step-text"><b class="lang-fr">Réalisation Collective :</b><b class="lang-en">Co-building:</b> Phase de fabrication finale et assemblage matériel menés en partenariat avec le groupe Robotique.</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MODAL : DU TSS - SEMESTRE 2 : BABYAIR -->
+    <div id="modal-tss-s2" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-tss-s2')">&times;</button>
+            <h2>BabyAir - DU TSS (Semestre 2)</h2>
+
+            <p class="lang-fr info-banner"><strong>Période :</strong> Projet réalisé durant le <strong>semestre 2</strong>.</p>
+            <p class="lang-en info-banner"><strong>Period:</strong> Project carried out during <strong>semester 2</strong>.</p>
+
+            <div class="modal-images">
+                <img src="images/capteursemestre2.png" alt="Boîtier BabyAir avec capteur">
+            </div>
+
+            <h3>Présentation du Projet</h3>
+            <p class="lang-fr">BabyAir est un boîtier équipé d'un capteur, réalisé au cours du semestre 2 du DU TSS.</p>
+            <p class="lang-en">BabyAir is an enclosure fitted with a sensor, built during semester 2 of the DU TSS.</p>
+
+            <!-- À COMPLÉTER : mon rôle, compétences CONCEVOIR / VÉRIFIER, cahier des charges, déroulement -->
+        </div>
+    </div>
+
+    <!-- MODAL : DU TSS - SEMESTRE 3 : EXOSQUELETTE -->
+    <div id="modal-tss-s3" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-tss-s3')">&times;</button>
+            <h2>Projet Exosquelette & Signaux - DU TSS (Semestre 3, encadrement M. Morin)</h2>
+
+            <p class="lang-fr info-banner"><strong>Période :</strong> Projet réalisé durant le <strong>semestre 3</strong>.</p>
+            <p class="lang-en info-banner"><strong>Period:</strong> Project carried out during <strong>semester 3</strong>.</p>
             
             <div class="skills-container">
                 <div class="skill-box concevoir">
@@ -644,7 +736,7 @@
             </div>
 
             <div class="modal-images">
-                <img src="images/MAIN ROBOT .png" alt="Aperçu Projet Exosquelette">
+                <img src="images/exosquelette.png" alt="Exosquelette">
             </div>
 
             <h3>Présentation du Projet & Axes d'Étude</h3>
@@ -665,7 +757,7 @@
                 </li>
             </ul>
 
-            <h3>Déroulement (Semestre 2)</h3>
+            <h3>Déroulement (Semestre 3)</h3>
             <ul class="modal-timeline">
                 <li><span class="step-badge timeline-launch">1</span><div class="step-text"><b>Recherche :</b> Étude bibliographique des exosquelettes et des besoins en rééducation/assistance.</div></li>
                 <li><span class="step-badge timeline-study">2</span><div class="step-text"><b>Physiologie :</b> Analyse des signaux électrophysiologiques et de la contraction musculaire.</div></li>
@@ -729,79 +821,13 @@
         </div>
     </div>
 
-    <!-- MODAL : MAIN ROBOTIQUE DU SANTÉ (non lié à une carte pour l'instant) -->
-    <div id="modal-main-sante" class="modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('modal-main-sante')">&times;</button>
-            <h2>Main Robotique Motorisée - DU Santé</h2>
-            
-            <div class="skills-container">
-                <div class="skill-box concevoir">
-                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
-                    <ul>
-                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Traduction du besoin prothétique médical en grandeurs physiques et angles de servomoteurs.</span><span class="lang-en">Converting anatomical needs into operational control coordinates.</span></li>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Développement sous CATIA des architectures géométriques des phalanges articulées.</span><span class="lang-en">Modeling mechanical finger segments inside advanced CAD solutions.</span></li>
-                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Validation et correction des formes par impression 3D successive de maquettes d'études.</span><span class="lang-en">Validating shapes through sequential structural printing.</span></li>
-                    </ul>
-                </div>
-                <div class="skill-box verifier">
-                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
-                    <ul>
-                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Élaboration du protocole d'acquisition et filtrage logiciel des signaux myoélectriques.</span><span class="lang-en">Drafting biometric signal capture and software digital filter test steps.</span></li>
-                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Campagne de tests d'ajustement réels des capteurs sur l'avant-bras et calibration fine de la réactivité des doigts.</span><span class="lang-en">Testing sensors on forearm to fix target motion tracking errors.</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="modal-images">
-                <img src="images/MAIN ROBOT .png" alt="Aperçu Prothèse">
-            </div>
-            <h3>Présentation du Projet</h3>
-            <p class="lang-fr">Conception interdisciplinaire d'une prothèse de main articulée programmable, reliant l'ingénierie au domaine médical.</p>
-            <p class="lang-en">Interdisciplinary design of an open articulated programmable hand prosthesis, linking engineering and modern medicine.</p>
-            
-            <ul class="req-list">
-                <li>
-                    <strong><span class="lang-fr">Modélisation CAO :</span><span class="lang-en">CAD Modeling:</span></strong> 
-                    <span class="lang-fr">Conception géométrique et modélisation complète des doigts de la main sur le logiciel <b>CATIA</b>.</span>
-                    <span class="lang-en">Geometric design and complete modeling of the hand fingers using <b>CATIA</b> software.</span>
-                </li>
-                <li>
-                    <strong><span class="lang-fr">Interface Myoélectrique :</span><span class="lang-en">Myoelectric Interface:</span></strong> 
-                    <span class="lang-fr">Utilisation de capteurs positionnés sur l'avant-bras pour détecter l'activité musculaire et piloter les mouvements.</span>
-                    <span class="lang-en">Use of sensors placed on the forearm to detect muscle activity and drive finger movements.</span>
-                </li>
-                <li>
-                    <strong><span class="lang-fr">Programmation Arduino :</span><span class="lang-en">Arduino Programming:</span></strong> 
-                    <span class="lang-fr">Développement d'algorithmes lors de séances de codage pour traduire les signaux des capteurs en angles pour les servomoteurs des doigts.</span>
-                    <span class="lang-en">Development of algorithms during coding sessions to map sensor data to servo motor angles.</span>
-                </li>
-                <li>
-                    <strong><span class="lang-fr">Synergie Inter-groupes :</span><span class="lang-en">Cross-team Synergy:</span></strong> 
-                    <span class="lang-fr">Collaboration étroite avec le <b>groupe Robotique</b> pour l'assemblage mécanique final et l'intégration matérielle de la main.</span>
-                    <span class="lang-en">Close collaboration with the <b>Robotics team</b> for final mechanical assembly and hardware integration.</span>
-                </li>
-            </ul>
-
-            <h3>Déroulement Temporel</h3>
-            <ul class="modal-timeline">
-                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Étude & Conception :</b><b class="lang-en">Study & Design:</b> Modélisation 3D des pièces de la main sur le logiciel CATIA.</div></li>
-                <li><span class="step-badge timeline-study">S2</span><div class="step-text"><b class="lang-fr">Séances Arduino :</b><b class="lang-en">Arduino Sessions:</b> Développement du code de contrôle et traitement des signaux d'acquisition.</div></li>
-                <li><span class="step-badge timeline-design">S3</span><div class="step-text"><b class="lang-fr">Tests d'Ajustement :</b><b class="lang-en">Adjustment Tests:</b> Intégration et étalonnage des capteurs placés sur l'avant-bras pour le contrôle des doigts.</div></li>
-                <li><span class="step-badge timeline-build">S4</span><div class="step-text"><b class="lang-fr">Réalisation Collective :</b><b class="lang-en">Co-building:</b> Phase de fabrication finale et assemblage matériel menés en partenariat avec le groupe Robotique.</div></li>
-            </ul>
-        </div>
-    </div>
-
     <script>
-        // Changement de page adaptatif
         function showPage(pageId) {
             document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             window.scrollTo(0,0);
         }
 
-        // Script de filtrage dynamique de l'onglet Compétences
         function filterSkills(category, button) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
@@ -816,12 +842,10 @@
             });
         }
 
-        // Modales 
         function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; }
         function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
         window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.style.display = 'none'; }
 
-        // Système de Traduction FR / EN
         function toggleLanguage() {
             const frElements = document.querySelectorAll('.lang-fr');
             const enElements = document.querySelectorAll('.lang-en');
@@ -838,7 +862,6 @@
             }
         }
 
-        // Gestion Mode Sombre / Lumineux
         function toggleTheme() {
             const body = document.body;
             const icon = document.querySelector('.theme-toggle i');
