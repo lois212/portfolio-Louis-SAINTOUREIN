@@ -7,9 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* --- DESIGN SYSTEM PERSONNALISÉ --- */
         :root {
-            --bg: #ccd5ae ;
+            --bg: #ccd5ae;
             --surface: #e9edc9;
             --text-main: #344e41;
             --text-muted: #3a5a40;
@@ -20,7 +19,6 @@
             --shadow: 0 4px 15px rgba(0,0,0,0.05);
             --badge-concevoir: #ae2012;
             --badge-verifier: #e9d8a6;
-            --badge-verifier-text: #005f73;
             --filter-active: #344e41;
             --filter-active-text: #dad7cd;
         }
@@ -37,16 +35,12 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             --badge-concevoir: #ca6702;
             --badge-verifier: #94d2bd;
-            --badge-verifier-text: #001219;
             --filter-active: #dad7cd;
             --filter-active-text: #344e41;
         }
 
-        * { 
-            box-sizing: border-box; 
-            transition: all 0.3s ease;
-        }
-        
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+
         body {
             background-color: var(--bg);
             color: var(--text-main);
@@ -55,7 +49,6 @@
             padding-bottom: 60px;
         }
 
-        /* --- NAVIGATION CENTRÉE --- */
         header {
             display: flex;
             justify-content: center;
@@ -70,30 +63,18 @@
         }
 
         nav { display: flex; align-items: center; gap: 35px; }
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-        }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 700; font-size: 15px; cursor: pointer; }
         nav a:hover { opacity: 0.6; }
-        
+
         .btn-cv { color: var(--text-main) !important; display: flex; align-items: center; gap: 8px; }
 
-        .header-btns { 
-            display: flex; 
-            align-items: center; 
-            gap: 15px; 
-            margin-left: 35px;
-        }
-        
-        .btn-lang, .theme-toggle, .btn-linkedin { 
-            background: none; border: 1px solid var(--border); 
+        .header-btns { display: flex; align-items: center; gap: 15px; margin-left: 35px; }
+
+        .btn-lang, .theme-toggle, .btn-linkedin {
+            background: none; border: 1px solid var(--border);
             color: var(--text-main); width: 38px; height: 38px;
             border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-family: inherit;
-            text-decoration: none; font-size: 18px;
+            font-weight: 800; font-family: inherit; text-decoration: none; font-size: 18px;
         }
         .btn-linkedin:hover { opacity: 0.6; }
 
@@ -104,7 +85,6 @@
             border-radius: 8px;
         }
 
-        /* --- SECTIONS --- */
         section {
             display: none;
             padding: 100px 20px;
@@ -115,11 +95,10 @@
         section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- ACCUEIL --- */
         .hero { text-align: center; margin-top: 10vh; }
         .hero h1 { font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; }
         .hero p { font-size: 22px; color: var(--text-muted); max-width: 800px; margin: 0 auto 40px; }
-        
+
         .btn-main {
             display: inline-block;
             background: var(--text-main);
@@ -131,7 +110,6 @@
             cursor: pointer;
         }
 
-        /* --- PROJETS --- */
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .group-title { margin: 50px 0 5px 0; font-size: 26px; font-weight: 800; }
         .group-sub { margin: 0 0 25px 0; color: var(--text-muted); font-size: 15px; }
@@ -156,26 +134,13 @@
             margin-bottom: 10px;
         }
 
-        /* --- PAGE COMPÉTENCES --- */
-        .skills-layout {
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
+        .skills-layout { display: grid; grid-template-columns: 240px 1fr; gap: 40px; margin-top: 30px; }
         @media (max-width: 768px) {
             .skills-layout { grid-template-columns: 1fr; gap: 20px; }
             .filter-sidebar { flex-direction: row; flex-wrap: wrap; justify-content: center; }
         }
         .filter-sidebar { display: flex; flex-direction: column; gap: 12px; }
-        .filter-title {
-            font-weight: 800;
-            font-size: 14px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
+        .filter-title { font-weight: 800; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; opacity: 0.8; }
         .filter-btn {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -188,16 +153,8 @@
             font-size: 14px;
         }
         .filter-btn:hover { opacity: 0.8; transform: translateX(5px); }
-        .filter-btn.active {
-            background: var(--filter-active);
-            color: var(--filter-active-text);
-            border-color: var(--filter-active);
-        }
-        .software-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-        }
+        .filter-btn.active { background: var(--filter-active); color: var(--filter-active-text); border-color: var(--filter-active); }
+        .software-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
         .software-card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -216,7 +173,6 @@
         .software-card h4 { margin: 0; font-size: 15px; font-weight: 800; }
         .software-card span { font-size: 12px; opacity: 0.7; font-weight: 600; text-transform: uppercase; }
 
-        /* --- MODALES --- */
         .modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--modal-overlay); z-index: 1000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(5px);
@@ -230,58 +186,37 @@
             background: var(--surface); border: none; color: var(--text-main); width: 40px; height: 40px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
         }
-        
-        .info-banner {
-            background: var(--surface);
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid var(--text-main);
-        }
+
+        .info-banner { background: var(--surface); padding: 15px; border-radius: 10px; border-left: 4px solid var(--text-main); }
 
         .modal-images { display: flex; flex-direction: column; gap: 20px; margin: 25px 0; }
-        .modal-images img { 
-            width: 100%; 
-            height: 400px; 
-            object-fit: contain; 
-            border-radius: 15px; 
-            background: white; 
-            padding: 10px; 
-            border: 1px solid var(--border); 
+        .modal-images img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            border-radius: 15px;
+            background: white;
+            padding: 10px;
+            border: 1px solid var(--border);
         }
-        
+
         .req-list { list-style: none; padding: 0; margin: 15px 0; }
         .req-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
         .req-list li::before { content: "→"; color: var(--text-main); position: absolute; left: 0; font-weight: 800; }
 
-        /* --- BLOCS DE COMPÉTENCES --- */
-        .skills-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 20px 0 30px 0;
-        }
+        .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0 30px 0; }
         @media (max-width: 600px) { .skills-container { grid-template-columns: 1fr; } }
-        
+
         .skill-box { padding: 20px; border-radius: 15px; border: 1px solid var(--border); }
         .skill-box.concevoir { background: rgba(174, 32, 18, 0.08); border-left: 5px solid var(--badge-concevoir); }
         .skill-box.verifier { background: rgba(233, 216, 166, 0.15); border-left: 5px solid var(--badge-verifier); }
-        
-        .skill-box h4 {
-            margin: 0 0 10px 0;
-            font-size: 16px;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .skill-box h4 { margin: 0 0 10px 0; font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
         .skill-box h4 i { font-size: 18px; }
         .skill-box.concevoir h4 { color: var(--badge-concevoir); }
         .skill-box.verifier h4 { color: var(--text-main); }
-        
         .skill-box ul { padding-left: 20px; margin: 0; font-size: 14px; color: var(--text-main); line-height: 1.5; }
         .skill-box ul li { margin-bottom: 6px; }
 
-        /* --- TIMELINE PROJETS --- */
         .modal-timeline { position: relative; margin: 30px 0; padding: 0; list-style: none; }
         .modal-timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 18px; width: 2px; background-color: var(--border); }
         .modal-timeline li { position: relative; margin-bottom: 25px; padding-left: 55px; }
@@ -290,31 +225,20 @@
             font-weight: 800; color: #fff; border-radius: 50%; font-size: 12px;
             display: flex; align-items: center; justify-content: center; z-index: 2;
         }
-        .timeline-launch { background-color: #588157; } 
-        .timeline-study { background-color: #3a5a40; } 
-        .timeline-design { background-color: #344e41; } 
+        .timeline-launch { background-color: #588157; }
+        .timeline-study { background-color: #3a5a40; }
+        .timeline-design { background-color: #344e41; }
         .timeline-build { background-color: #a3b18a; color: #344e41 !important; }
 
-        /* --- PARCOURS & EXTRA-IUT --- */
         .timeline { border-left: 3px solid var(--text-main); margin-left: 20px; padding-left: 30px; margin-bottom: 40px; }
         .timeline-item { margin-bottom: 50px; position: relative; }
         .timeline-item::before {
             content: ""; width: 16px; height: 16px; background: var(--bg);
             border: 4px solid var(--text-main); border-radius: 50%; position: absolute; left: -40px; top: 5px;
         }
-        
-        .extra-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-        .extra-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 20px;
-            border-radius: 15px;
-        }
+
+        .extra-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px; }
+        .extra-card { background: var(--surface); border: 1px solid var(--border); padding: 20px; border-radius: 15px; }
         .extra-card h3 { margin: 0 0 10px 0; display: flex; align-items: center; gap: 10px; font-size: 18px; }
 
         .lang-en { display: none; }
@@ -347,10 +271,10 @@
         <div class="hero">
             <h1 class="lang-fr"><br><span class="highlight">Louis SAINTOUREIN</span></h1>
             <h1 class="lang-en"><br><span class="highlight">Louis SAINTOUREIN</span></h1>
-            
+
             <p class="lang-fr">Étudiant en 1ère année de BUT GEII à l'IUT de Bordeaux. Passionné par l'électronique.</p>
             <p class="lang-en">1st year Electrical Engineering student at Bordeaux IT. Passionate about electronics.</p>
-            
+
             <a onclick="showPage('projets')" class="btn-main"><span class="lang-fr">Mes Projets</span><span class="lang-en">My Projects</span></a>
         </div>
     </section>
@@ -358,7 +282,7 @@
     <section id="competences">
         <h1 class="lang-fr">Outils techniques</h1>
         <h1 class="lang-en">Technical Tools</h1>
-        
+
         <div class="skills-layout">
             <div class="filter-sidebar">
                 <div class="filter-title">/// Filtres</div>
@@ -390,6 +314,11 @@
                 <div class="software-card" data-cat="informatique">
                     <img src="images/arduino.png" alt="Arduino">
                     <h4>Arduino</h4>
+                    <span>Informatique</span>
+                </div>
+                <div class="software-card" data-cat="informatique">
+                    <img src="images/logo_maple.jpg" alt="Maple">
+                    <h4>Maple</h4>
                     <span>Informatique</span>
                 </div>
                 <div class="software-card" data-cat="bureautique">
@@ -438,7 +367,7 @@
         <h2 class="group-title"><span class="lang-fr">Projets SAÉ</span><span class="lang-en">SAÉ Projects</span></h2>
         <div class="project-grid">
             <div class="card" onclick="openModal('modal-rafale')">
-                <img src="images/rafales3.png" alt="Rafale">
+                <img src="images/rafales3.jpg" alt="Rafale">
                 <div class="card-content">
                     <h3>Système Sonore & Lumineux Rafale</h3>
                     <p class="lang-fr">Conception pour maquette d'aéromodélisme nocturne.</p>
@@ -460,7 +389,7 @@
         <p class="group-sub lang-en">One project per semester.</p>
         <div class="project-grid">
             <div class="card" onclick="openModal('modal-tss-s1')">
-                <img src="images/main_robot.png" alt="Main robotique">
+                <img src="images/MAIN ROBOT.jpg" alt="Main robotique">
                 <div class="card-content">
                     <span class="sem-tag"><span class="lang-fr">Semestre 1</span><span class="lang-en">Semester 1</span></span>
                     <h3>Main Robotique Motorisée</h3>
@@ -469,16 +398,16 @@
                 </div>
             </div>
             <div class="card" onclick="openModal('modal-tss-s2')">
-                <img src="images/capteursemestre2.png" alt="BabyAir">
+                <img src="images/capteursemestre2.jpg" alt="BabyAir">
                 <div class="card-content">
                     <span class="sem-tag"><span class="lang-fr">Semestre 2</span><span class="lang-en">Semester 2</span></span>
                     <h3>BabyAir</h3>
-                    <p class="lang-fr">Boîtier équipé d'un capteur.</p>
-                    <p class="lang-en">Enclosure fitted with a sensor.</p>
+                    <p class="lang-fr">Boîtier équipé d'un capteur, de la conception à la fabrication.</p>
+                    <p class="lang-en">Sensor enclosure, from design to manufacturing.</p>
                 </div>
             </div>
             <div class="card" onclick="openModal('modal-tss-s3')">
-                <img src="images/exosquelette.png" alt="Exosquelette">
+                <img src="images/exosquelette.jpg" alt="Exosquelette">
                 <div class="card-content">
                     <span class="sem-tag"><span class="lang-fr">Semestre 3</span><span class="lang-en">Semester 3</span></span>
                     <h3>Exosquelette & Signaux</h3>
@@ -509,7 +438,7 @@
         <h1 class="lang-en">Personal Experiences & Soft Skills</h1>
         <p class="lang-fr" style="font-size:16px; color:var(--text-muted);">La pratique régulière d'activités sportives m'apporte une discipline et des compétences transposables dans la gestion de mes projets en ingénierie :</p>
         <p class="lang-en" style="font-size:16px; color:var(--text-muted);">Regular sports activities build the strict discipline and skills I transfer to my daily engineering work:</p>
-        
+
         <div class="extra-container">
             <div class="extra-card">
                 <h3><i class="fa-solid fa-dumbbell"></i> <span class="lang-fr">Musculation</span><span class="lang-en">Weightlifting</span></h3>
@@ -529,7 +458,7 @@
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-rafale')">&times;</button>
             <h2>Système Sonore & Lumineux - Rafale Toy Corp</h2>
-            
+
             <p class="lang-fr info-banner">
                 <strong>Mon rôle sur ce projet :</strong> Je me suis occupé de la fabrication de la carte électronique et de la rédaction du Dossier de Conception (DCC) et du Dossier de Fabrication (DDF).
             </p>
@@ -553,8 +482,8 @@
             </div>
 
             <div class="modal-images">
-                <img src="images/rafales3.png" alt="Rafale 3">
-                <img src="images/carte_rafale2.png" alt="Carte Rafale 2">
+                <img src="images/carte rafale.jpg" alt="Carte Rafale">
+                <img src="images/carte rafale2.jpg" alt="Carte Rafale 2">
             </div>
 
             <h3>Cahier des Charges</h3>
@@ -577,7 +506,7 @@
             <p class="lang-fr info-banner">
                 <strong>Mon rôle sur ce projet :</strong> J'ai fait principalement la partie vérification et la rédaction du Dossier de Conception (DCC).
             </p>
-            
+
             <div class="skills-container">
                 <div class="skill-box concevoir">
                     <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
@@ -629,7 +558,7 @@
 
             <p class="lang-fr info-banner"><strong>Période :</strong> Projet réalisé durant le <strong>semestre 1</strong>.</p>
             <p class="lang-en info-banner"><strong>Period:</strong> Project carried out during <strong>semester 1</strong>.</p>
-            
+
             <div class="skills-container">
                 <div class="skill-box concevoir">
                     <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
@@ -649,30 +578,30 @@
             </div>
 
             <div class="modal-images">
-                <img src="images/main_robot.png" alt="Aperçu Prothèse">
+                <img src="images/MAIN ROBOT.jpg" alt="Aperçu Prothèse">
             </div>
             <h3>Présentation du Projet</h3>
             <p class="lang-fr">Conception interdisciplinaire d'une prothèse de main articulée programmable, reliant l'ingénierie au domaine médical.</p>
             <p class="lang-en">Interdisciplinary design of an open articulated programmable hand prosthesis, linking engineering and modern medicine.</p>
-            
+
             <ul class="req-list">
                 <li>
-                    <strong><span class="lang-fr">Modélisation CAO :</span><span class="lang-en">CAD Modeling:</span></strong> 
+                    <strong><span class="lang-fr">Modélisation CAO :</span><span class="lang-en">CAD Modeling:</span></strong>
                     <span class="lang-fr">Conception géométrique et modélisation complète des doigts de la main sur le logiciel <b>CATIA</b>.</span>
                     <span class="lang-en">Geometric design and complete modeling of the hand fingers using <b>CATIA</b> software.</span>
                 </li>
                 <li>
-                    <strong><span class="lang-fr">Interface Myoélectrique :</span><span class="lang-en">Myoelectric Interface:</span></strong> 
+                    <strong><span class="lang-fr">Interface Myoélectrique :</span><span class="lang-en">Myoelectric Interface:</span></strong>
                     <span class="lang-fr">Utilisation de capteurs positionnés sur l'avant-bras pour détecter l'activité musculaire et piloter les mouvements.</span>
                     <span class="lang-en">Use of sensors placed on the forearm to detect muscle activity and drive finger movements.</span>
                 </li>
                 <li>
-                    <strong><span class="lang-fr">Programmation Arduino :</span><span class="lang-en">Arduino Programming:</span></strong> 
+                    <strong><span class="lang-fr">Programmation Arduino :</span><span class="lang-en">Arduino Programming:</span></strong>
                     <span class="lang-fr">Développement d'algorithmes lors de séances de codage pour traduire les signaux des capteurs en angles pour les servomoteurs des doigts.</span>
                     <span class="lang-en">Development of algorithms during coding sessions to map sensor data to servo motor angles.</span>
                 </li>
                 <li>
-                    <strong><span class="lang-fr">Synergie Inter-groupes :</span><span class="lang-en">Cross-team Synergy:</span></strong> 
+                    <strong><span class="lang-fr">Synergie Inter-groupes :</span><span class="lang-en">Cross-team Synergy:</span></strong>
                     <span class="lang-fr">Collaboration étroite avec le <b>groupe Robotique</b> pour l'assemblage mécanique final et l'intégration matérielle de la main.</span>
                     <span class="lang-en">Close collaboration with the <b>Robotics team</b> for final mechanical assembly and hardware integration.</span>
                 </li>
@@ -697,15 +626,26 @@
             <p class="lang-fr info-banner"><strong>Période :</strong> Projet réalisé durant le <strong>semestre 2</strong>.</p>
             <p class="lang-en info-banner"><strong>Period:</strong> Project carried out during <strong>semester 2</strong>.</p>
 
+            <!-- À COMPLÉTER : ton rôle précis dans le projet -->
+
             <div class="modal-images">
-                <img src="images/capteursemestre2.png" alt="Boîtier BabyAir avec capteur">
+                <img src="images/capteursemestre2.jpg" alt="Boîtier BabyAir avec capteur">
             </div>
 
             <h3>Présentation du Projet</h3>
-            <p class="lang-fr">BabyAir est un boîtier équipé d'un capteur, réalisé au cours du semestre 2 du DU TSS.</p>
-            <p class="lang-en">BabyAir is an enclosure fitted with a sensor, built during semester 2 of the DU TSS.</p>
+            <p class="lang-fr">BabyAir est un boîtier équipé d'un capteur, réalisé en groupe au cours du semestre 2 du DU TSS. Le projet suit une démarche complète : identification du problème, solution proposée, étude technique, fabrication et bilan.</p>
+            <p class="lang-en">BabyAir is a sensor enclosure built as a team during semester 2 of the DU TSS. The project follows a complete process: problem identification, proposed solution, technical study, manufacturing and conclusion.</p>
 
-            <!-- À COMPLÉTER : mon rôle, compétences CONCEVOIR / VÉRIFIER, cahier des charges, déroulement -->
+            <!-- À COMPLÉTER : le problème, la solution, le capteur utilisé, les résultats -->
+
+            <h3>Déroulement du projet</h3>
+            <ul class="modal-timeline">
+                <li><span class="step-badge timeline-launch">1</span><div class="step-text"><b class="lang-fr">Problème :</b><b class="lang-en">Problem:</b> <span class="lang-fr">Identification du besoin à l'origine de BabyAir.</span><span class="lang-en">Identifying the need behind BabyAir.</span></div></li>
+                <li><span class="step-badge timeline-study">2</span><div class="step-text"><b class="lang-fr">Solution :</b><b class="lang-en">Solution:</b> <span class="lang-fr">Présentation du boîtier équipé d'un capteur.</span><span class="lang-en">Presentation of the sensor-equipped enclosure.</span></div></li>
+                <li><span class="step-badge timeline-design">3</span><div class="step-text"><b class="lang-fr">Partie technique et câblage :</b><b class="lang-en">Technical part and wiring:</b> <span class="lang-fr">Choix des composants et câblage du système.</span><span class="lang-en">Component selection and system wiring.</span></div></li>
+                <li><span class="step-badge timeline-build">4</span><div class="step-text"><b class="lang-fr">Boîtier :</b><b class="lang-en">Enclosure:</b> <span class="lang-fr">Modélisation du boîtier avec Boxes.py, puis fabrication.</span><span class="lang-en">Enclosure modeled with Boxes.py, then manufactured.</span></div></li>
+                <li><span class="step-badge timeline-build">5</span><div class="step-text"><b class="lang-fr">Bilan :</b><b class="lang-en">Conclusion:</b> <span class="lang-fr">Conclusion du projet.</span><span class="lang-en">Project wrap-up.</span></div></li>
+            </ul>
         </div>
     </div>
 
@@ -717,7 +657,7 @@
 
             <p class="lang-fr info-banner"><strong>Période :</strong> Projet réalisé durant le <strong>semestre 3</strong>.</p>
             <p class="lang-en info-banner"><strong>Period:</strong> Project carried out during <strong>semester 3</strong>.</p>
-            
+
             <div class="skills-container">
                 <div class="skill-box concevoir">
                     <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
@@ -736,23 +676,23 @@
             </div>
 
             <div class="modal-images">
-                <img src="images/exosquelette.png" alt="Exosquelette">
+                <img src="images/exosquelette.jpg" alt="Exosquelette">
             </div>
 
             <h3>Présentation du Projet & Axes d'Étude</h3>
             <p class="lang-fr">Projet interdisciplinaire (DU TSS) encadré par M. Morin, axé sur l'interaction homme-machine à travers l'étude des exosquelettes et de la physiologie humaine.</p>
-            
+
             <ul class="req-list">
                 <li>
-                    <strong>Les Exosquelettes :</strong> 
+                    <strong>Les Exosquelettes :</strong>
                     <span>Étude des technologies d'assistance physique, de la compensation des efforts et de la restitution de puissance mécanique.</span>
                 </li>
                 <li>
-                    <strong>Signaux Électrophysiologiques :</strong> 
+                    <strong>Signaux Électrophysiologiques :</strong>
                     <span>Acquisition, traitement et analyse des signaux électriques issus de l'activité musculaire (type EMG).</span>
                 </li>
                 <li>
-                    <strong>Physiologie (Contraction Musculaire & Cardiovasculaire) :</strong> 
+                    <strong>Physiologie (Contraction Musculaire & Cardiovasculaire) :</strong>
                     <span>Compréhension des mécanismes de contraction des fibres musculaires et suivi de la réponse du système cardiovasculaire lors de l'effort avec l'exosquelette.</span>
                 </li>
             </ul>
@@ -767,60 +707,6 @@
         </div>
     </div>
 
-    <!-- MODAL : KART (non lié à une carte pour l'instant) -->
-    <div id="modal-kart" class="modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('modal-kart')">&times;</button>
-            <h2>Kart À Hélice Télécommandé (Protocole NEC)</h2>
-            <p class="lang-fr info-banner">
-                <strong>Mon rôle sur ce projet :</strong> J'ai fait principalement la partie vérification ainsi que la rédaction du Dossier de Conception (DCC), du Dossier de Fabrication (DDF) et du Dossier de Validation (DDV).
-            </p>
-            
-            <div class="skills-container">
-                <div class="skill-box concevoir">
-                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
-                    <ul>
-                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Analyse structurelle des architectures Émetteur/Récepteur et définition de la trame NEC 32-bits.</span><span class="lang-en">Architectural analysis of remote transceiver structures and link data protocols.</span></li>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Calcul et choix des transistors de puissance pour générer un courant d'émission infrarouge &gt;200mA.</span><span class="lang-en">Engineering calculations for peak driver transmission loops.</span></li>
-                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Affinage logiciel des routines de capture de signal (PWM, Timers STM32) sur platine de test.</span><span class="lang-en">Refining peripheral timing and register capture on testing setups.</span></li>
-                    </ul>
-                </div>
-                <div class="skill-box verifier">
-                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
-                    <ul>
-                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Planification du protocole de validation de la sécurité "Failsafe" et mesure de la portée utile (10m).</span><span class="lang-en">Drafting failsafe safe-state cutoff evaluations and range validation.</span></li>
-                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Diagnostic à l'oscilloscope numérique pour isoler et corriger les erreurs de décodage des bits.</span><span class="lang-en">Using logic instruments to inspect, target, and resolve bit mistakes.</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="modal-images">
-                <img src="images/carte emetteur de face.jpg" alt="Émetteur Vue Face">
-                <img src="images/carte recepteur.jpg" alt="Récepteur Intégration">
-                <img src="images/carte emetteur de dos.jpg" alt="Émetteur Vue Dos">
-            </div>
-            <h3>Cahier des Charges</h3>
-            <p class="lang-fr">Développement matériel et logiciel complet d'un système de modélisme (Émetteur et Récepteur) contrôlé sans fil.</p>
-            <p class="lang-en">Full hardware and software development of a wireless remote-controlled vehicle platform.</p>
-            <ul class="req-list">
-                <li><strong>EXIG_EMETTEUR :</strong> Encombrement 120x80mm, accus LiPo 2S, 2 potentiomètres (Vitesse, Servomoteur) et 1 bouton Klaxon.</li>
-                <li><strong>EXIG_TRAME :</strong> Encodage d'une trame infrarouge NEC 32 bits (Adresse équipe, Direction 5 bits, Puissance 3 bits).</li>
-                <li><strong>EXIG_RECEPTEUR :</strong> PCB 100x75mm, contrôle d'intégrité de trame et gestion des sécurités.</li>
-                <li><strong>EXIG_SECURITE : "Failsafe"</strong> intégré coupant instantanément la puissance moteur en cas de perte du faisceau optique.</li>
-                <li><strong>EXIG_ACTIONNEURS :</strong> Signaux PWM pour variateur Brushless et servomoteur (+/-30°), signal carré à 4kHz pour avertisseur sonore.</li>
-                <li><strong>EXIG_COUT :</strong> Budget maximal de 160€ TTC, délai global de réalisation de 58 heures.</li>
-            </ul>
-            <h3>Déroulement Temporel</h3>
-            <ul class="modal-timeline">
-                <li><span class="step-badge timeline-launch">S1</span><div class="step-text"><b class="lang-fr">Cadrage :</b><b class="lang-en">Cadrage:</b> Définition de l'architecture fonctionnelle Élec/Info.</div></li>
-                <li><span class="step-badge timeline-study">S3-18</span><div class="step-text"><b class="lang-fr">Étude :</b><b class="lang-en">Study:</b> Calculs d'émission IR (&gt;200mA crête) et modélisation algorithmique.</div></li>
-                <li><span class="step-badge timeline-design">S23-33</span><div class="step-text"><b class="lang-fr">Routage :</b><b class="lang-en">CAD:</b> Dessin des circuits imprimés et programmation des modules d'interruption.</div></li>
-                <li><span class="step-badge timeline-build">S35</span><div class="step-text"><b class="lang-fr">Soudure & Flash :</b><b class="lang-en">Assembly:</b> Câblage des cartes, implémentation C++ et configuration Timers.</div></li>
-                <li><span class="step-badge timeline-build">S43-58</span><div class="step-text"><b class="lang-fr">Essais :</b><b class="lang-en">Tests:</b> Validation de la portée à 10m, écriture du DDV et démonstration dynamique.</div></li>
-            </ul>
-        </div>
-    </div>
-
     <script>
         function showPage(pageId) {
             document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
@@ -831,14 +717,8 @@
         function filterSkills(category, button) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-
-            const cards = document.querySelectorAll('.software-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-cat') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+            document.querySelectorAll('.software-card').forEach(card => {
+                card.style.display = (category === 'all' || card.getAttribute('data-cat') === category) ? 'flex' : 'none';
             });
         }
 
