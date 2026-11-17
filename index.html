@@ -317,7 +317,7 @@
                     <span>Informatique</span>
                 </div>
                 <div class="software-card" data-cat="informatique">
-                    <img src="images/logo_maple.jpg" alt="Maple">
+                    <img src="images/logo_maple.png" alt="Maple">
                     <h4>Maple</h4>
                     <span>Informatique</span>
                 </div>
@@ -389,7 +389,7 @@
         <p class="group-sub lang-en">One project per semester.</p>
         <div class="project-grid">
             <div class="card" onclick="openModal('modal-tss-s1')">
-                <img src="images/MAIN ROBOT.jpg" alt="Main robotique">
+                <img src="images/main_robot.jpg" alt="Main robotique">
                 <div class="card-content">
                     <span class="sem-tag"><span class="lang-fr">Semestre 1</span><span class="lang-en">Semester 1</span></span>
                     <h3>Main Robotique Motorisée</h3>
@@ -482,8 +482,8 @@
             </div>
 
             <div class="modal-images">
-                <img src="images/carte rafale.jpg" alt="Carte Rafale">
-                <img src="images/carte rafale2.jpg" alt="Carte Rafale 2">
+                <img src="images/schema_rafale.jpg" alt="Schéma Rafale">
+                <img src="images/carte_rafale2.jpg" alt="Carte Rafale 2">
             </div>
 
             <h3>Cahier des Charges</h3>
@@ -578,7 +578,7 @@
             </div>
 
             <div class="modal-images">
-                <img src="images/MAIN ROBOT.jpg" alt="Aperçu Prothèse">
+                <img src="images/main_robot.jpg" alt="Aperçu Prothèse">
             </div>
             <h3>Présentation du Projet</h3>
             <p class="lang-fr">Conception interdisciplinaire d'une prothèse de main articulée programmable, reliant l'ingénierie au domaine médical.</p>
@@ -708,6 +708,19 @@
     </div>
 
     <script>
+        // Filet de sécurité : si une image ne charge pas, on essaie d'autres extensions
+        document.addEventListener('error', function (e) {
+            var img = e.target;
+            if (img.tagName !== 'IMG') return;
+            var exts = ['jpg', 'png', 'jpeg', 'webp'];
+            if (!img.dataset.base) img.dataset.base = img.src.replace(/\.[a-zA-Z0-9]+$/, '');
+            var i = parseInt(img.dataset.try || '0', 10);
+            while (i < exts.length && (img.dataset.base + '.' + exts[i]) === img.src) i++;
+            if (i >= exts.length) return;
+            img.dataset.try = i + 1;
+            img.src = img.dataset.base + '.' + exts[i];
+        }, true);
+
         function showPage(pageId) {
             document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
