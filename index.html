@@ -19,6 +19,7 @@
             --shadow: 0 4px 15px rgba(0,0,0,0.05);
             --badge-concevoir: #ae2012;
             --badge-verifier: #e9d8a6;
+            --badge-manager: #386641;
             --filter-active: #344e41;
             --filter-active-text: #dad7cd;
         }
@@ -35,6 +36,7 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             --badge-concevoir: #ca6702;
             --badge-verifier: #94d2bd;
+            --badge-manager: #a7c957;
             --filter-active: #dad7cd;
             --filter-active-text: #344e41;
         }
@@ -190,6 +192,8 @@
         .info-banner { background: var(--surface); padding: 15px; border-radius: 10px; border-left: 4px solid var(--text-main); }
 
         .modal-images { display: flex; flex-direction: column; gap: 20px; margin: 25px 0; }
+        .modal-images figure { margin: 0; }
+        .modal-images figcaption { font-size: 14px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
         .modal-images img {
             width: 100%;
             height: 400px;
@@ -210,10 +214,12 @@
         .skill-box { padding: 20px; border-radius: 15px; border: 1px solid var(--border); }
         .skill-box.concevoir { background: rgba(174, 32, 18, 0.08); border-left: 5px solid var(--badge-concevoir); }
         .skill-box.verifier { background: rgba(233, 216, 166, 0.15); border-left: 5px solid var(--badge-verifier); }
+        .skill-box.manager { background: rgba(56, 102, 65, 0.10); border-left: 5px solid var(--badge-manager); grid-column: 1 / -1; }
         .skill-box h4 { margin: 0 0 10px 0; font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
         .skill-box h4 i { font-size: 18px; }
         .skill-box.concevoir h4 { color: var(--badge-concevoir); }
         .skill-box.verifier h4 { color: var(--text-main); }
+        .skill-box.manager h4 { color: var(--text-main); }
         .skill-box ul { padding-left: 20px; margin: 0; font-size: 14px; color: var(--text-main); line-height: 1.5; }
         .skill-box ul li { margin-bottom: 6px; }
 
@@ -425,6 +431,8 @@
                 <h3><span class="lang-fr">BUT GEII - 1ère année</span><span class="lang-en">BUT GEII - 1st Year</span></h3>
                 <p class="lang-fr">IUT de Bordeaux. Spécialisation en Électricité, Systèmes Embarqués et Informatique Industrielle.</p>
                 <p class="lang-en">Bordeaux Institute of Technology. Focused on electronics, automation and industrial computing.</p>
+                <p class="lang-fr"><strong>J'ai redoublé la 1ère année l'an dernier.</strong></p>
+                <p class="lang-en"><strong>I repeated the 1st year last year.</strong></p>
             </div>
             <div class="timeline-item">
                 <div style="font-weight:800; color:var(--text-muted)">Fin 2025</div>
@@ -453,30 +461,38 @@
         </div>
     </section>
 
-    <!-- MODAL : RAFALE -->
+    <!-- MODAL : RAFALE (SLR) -->
     <div id="modal-rafale" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-rafale')">&times;</button>
-            <h2>Système Sonore & Lumineux - Rafale Toy Corp</h2>
+            <h2>Système Sonore & Lumineux pour Rafale miniature (SLR) - Toy Corporation</h2>
 
             <p class="lang-fr info-banner">
-                <strong>Mon rôle sur ce projet :</strong> Je me suis occupé de la fabrication de la carte électronique et de la rédaction du Dossier de Conception (DCC) et du Dossier de Fabrication (DDF).
+                <strong>Mon rôle sur ce projet :</strong> Je me suis occupé de la fabrication de la carte électronique et de la rédaction du Dossier de Conception (DDC) et du Dossier de Fabrication (DDF).
             </p>
 
             <div class="skills-container">
                 <div class="skill-box concevoir">
-                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
+                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR (niveau 1)</h4>
                     <ul>
-                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Identification des fonctions de l'oscillateur NE555 et du buzzer à la lecture du CDC.</span></li>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Proposition d'une structure analogique pour moduler le signal de 280Hz à 780Hz.</span></li>
-                        <li><strong class="lang-fr">C.4 :</strong> <span class="lang-fr">Rédaction complète du Dossier de Conception (DCC) et saisie du routage PCB.</span></li>
+                        <li><strong class="lang-fr">AC11.01 :</strong> <span class="lang-fr">Analyse fonctionnelle à partir du cahier des charges : identification des fonctions (mesure de la tension, informations « Bruit », « Chargé » et « Clignote », buzzer, voyants) et des exigences associées.</span></li>
+                        <li><strong class="lang-fr">AC11.02 :</strong> <span class="lang-fr">Réalisation du prototype : fabrication de la carte électronique dans le volume imposé (95 x 40 mm, hauteur &lt; 30 mm).</span></li>
+                        <li><strong class="lang-fr">AC11.03 :</strong> <span class="lang-fr">Rédaction du Dossier de Fabrication (DDF) à partir du Dossier de Conception (DDC).</span></li>
                     </ul>
                 </div>
                 <div class="skill-box verifier">
-                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
+                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER (niveau 1)</h4>
                     <ul>
-                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Élaboration de la procédure de test de décharge et de mesure de la période des flashs (1.9s).</span></li>
-                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Vérification de l'encombrement limite (95x40mm) et correction des dérives de soudure.</span></li>
+                        <li><strong class="lang-fr">AC12.01 :</strong> <span class="lang-fr">Application d'une procédure d'essais : test de décharge et mesure de la période du clignotement (1,9 s à +/-20 %).</span></li>
+                        <li><strong class="lang-fr">AC12.02 :</strong> <span class="lang-fr">Identification des dysfonctionnements : contrôle de l'encombrement et repérage des dérives de soudure.</span></li>
+                    </ul>
+                </div>
+                <div class="skill-box manager">
+                    <h4><i class="fa-solid fa-users-gear"></i> Rôle MANAGER</h4>
+                    <ul>
+                        <li><span class="lang-fr">Participation à la planification initiale des 18 h de projet et à la répartition des tâches entre les membres du groupe.</span></li>
+                        <li><span class="lang-fr">Suivi de l'avancement et du budget (&lt; 20 € TTC) à chaque séance.</span></li>
+                        <li><span class="lang-fr">Échanges avec l'équipe et l'encadrant pour valider la bonne compréhension des exigences du client.</span></li>
                     </ul>
                 </div>
             </div>
@@ -486,48 +502,78 @@
                 <img src="images/carte_rafale2.jpg" alt="Carte Rafale 2">
             </div>
 
+            <h3>Présentation du produit</h3>
+            <p class="lang-fr">Dans le cadre d'opérations de découverte de l'aéromodélisme avec le grand public, l'entreprise <strong>Toy Corporation</strong> organise des sessions de lancer de planeurs à la main, en soirée ou en début de nuit. Le planeur a la forme d'un Rafale : il doit être visible grâce à des voyants lumineux clignotants et réaliste grâce à un dispositif sonore. Le client confie le développement de ce système sonore et lumineux (référence <strong>SLRPROD = CARTE_SON + CARTE_LUMIERE</strong>).</p>
+
             <h3>Cahier des Charges</h3>
-            <p class="lang-fr">Développer le système électronique embarqué autonome d'un planeur miniature pour des lancers nocturnes.</p>
+            <p class="lang-fr">Développer le système électronique embarqué d'un planeur miniature pour des lancers nocturnes, conformément aux exigences client suivantes :</p>
             <ul class="req-list">
-                <li><strong>EXIG_ENCOMBREMENT :</strong> Max strict : 95mm x 40mm x H&lt;30mm.</li>
-                <li><strong>EXIG_AUTONOMIE :</strong> &gt; 60s d'opération continue via alimentation sécurisée anti-crash (1.8V à 5.4V).</li>
-                <li><strong>EXIG_BRUIT :</strong> Signal pseudo-aléatoire variant de 280Hz à 780Hz proportionnel à la décharge de tension.</li>
-                <li><strong>EXIG_VISIBILITÉ :</strong> 2 LEDs fixes d'ailes et 1 LED de fuselage clignotante (période 1.9s, flash 0.1s).</li>
-                <li><strong>EXIG_COUT :</strong> Budget global &lt; 20€ par prototype, temps alloué restreint à 18 heures.</li>
+                <li><strong>EXIG_ENCOMBREMENT :</strong> Longueur 95 mm (+/-1 mm), largeur 40 mm (+/-1 mm), hauteur &lt; 30 mm (hors LEDs montées sur le planeur).</li>
+                <li><strong>EXIG_AUTONOMIE :</strong> Autonomie minimale de 60 s à partir de la charge nominale. Source d'énergie non susceptible d'exploser ou de s'enflammer en cas de crash. Fonctionnement garanti de 1,8 V à 5,4 V, tension nominale de 5,0 V.</li>
+                <li><strong>EXIG_TENSION :</strong> Étage de mesure de la tension d'alimentation, avec une précision de +/-5 %.</li>
+                <li><strong>EXIG_BRUIT :</strong> Information binaire pseudo-aléatoire dont la fréquence varie proportionnellement de 280 Hz à 780 Hz (+/-5 %) quand la tension passe de 1,8 V à 5,0 V. Fréquence constante au-dessus de 5,0 V, information nulle sous 1,8 V.</li>
+                <li><strong>EXIG_CHARGE :</strong> Information « Chargé » active au-dessus de 4,9 V (+/-0,1 V) et inactive sous 2,8 V (+/-0,1 V).</li>
+                <li><strong>EXIG_CLIGNOTE :</strong> Signal rectangulaire uniquement si « Chargé » est actif : période de 1,9 s (+/-20 %) et temps actif de 0,1 s (+/-20 %).</li>
+                <li><strong>EXIG_RETENTISSEMENT :</strong> Buzzer dont la membrane vibre en adéquation directe avec l'information « Bruit ».</li>
+                <li><strong>EXIG_ALLUMAGES :</strong> 3 voyants : rouge (aile gauche) et vert (aile droite) constamment allumés, jaune (fuselage) allumé seulement si « Clignote » est actif.</li>
+                <li><strong>EXIG_INTENSITES :</strong> 500 mcd (-/+50 %) par voyant actif, lorsque le super-condensateur est à sa tension nominale.</li>
+                <li><strong>EXIG_DELAI :</strong> 18 h pour l'ensemble du développement (conception, fabrication, vérification, présentation et démonstration).</li>
+                <li><strong>EXIG_COUT :</strong> Coût des composants d'un prototype inférieur à 20 € TTC.</li>
+            </ul>
+
+            <h3>Déroulement du projet</h3>
+            <ul class="modal-timeline">
+                <li><span class="step-badge timeline-launch">1</span><div class="step-text"><b>Analyse et planification :</b> Lecture du cahier des charges, identification des exigences et répartition des tâches sur les 18 h disponibles.</div></li>
+                <li><span class="step-badge timeline-study">2</span><div class="step-text"><b>Conception :</b> Étude des blocs fonctionnels (mesure de tension, génération du bruit et du clignotement, buzzer, voyants), choix des composants dans le budget de 20 € et rédaction du Dossier de Conception (DDC).</div></li>
+                <li><span class="step-badge timeline-design">3</span><div class="step-text"><b>Fabrication :</b> Réalisation de la carte électronique, soudure des composants et rédaction du Dossier de Fabrication (DDF).</div></li>
+                <li><span class="step-badge timeline-build">4</span><div class="step-text"><b>Vérification :</b> Essais sur la carte (tension, période du clignotement, encombrement) et correction des dérives de soudure.</div></li>
+                <li><span class="step-badge timeline-build">5</span><div class="step-text"><b>Présentation :</b> Démonstration du fonctionnement du système au client.</div></li>
             </ul>
         </div>
     </div>
 
-    <!-- MODAL : THERMOMÈTRE -->
+    <!-- MODAL : THERMOMÈTRE (TDB) -->
     <div id="modal-thermo" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-thermo')">&times;</button>
             <h2>Thermomètre De Bain pour Bébé</h2>
             <p class="lang-fr info-banner">
-                <strong>Mon rôle sur ce projet :</strong> J'ai fait principalement la partie vérification et la rédaction du Dossier de Conception (DCC).
+                <strong>Mon rôle sur ce projet :</strong> J'étais <strong>chef d'équipe</strong>. J'ai fait principalement la partie vérification et la rédaction du Dossier de Conception (DDC).
+            </p>
+            <p class="lang-en info-banner">
+                <strong>My role in this project:</strong> I was the <strong>team leader</strong>. I mainly handled the verification part and wrote the Design Document.
             </p>
 
             <div class="skills-container">
                 <div class="skill-box concevoir">
-                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
+                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR (niveau 1)</h4>
                     <ul>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Sélection technique des amplificateurs et des comparateurs de seuils (+5°C à +50°C).</span><span class="lang-en">Selection of specialized amplifiers and comparative operational blocks.</span></li>
-                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Affinage des calculs des ponts diviseurs de tension via maquettage et simulation Proteus.</span><span class="lang-en">Refining divider bridge networks using hardware circuit tracking.</span></li>
-                        <li><strong class="lang-fr">C.4 :</strong> <span class="lang-fr">Édition des plans de fabrication mécaniques et des typons du PCB double face (100x60mm).</span><span class="lang-en">Drafting manufacturing specifications for double-sided PCB layout.</span></li>
+                        <li><strong class="lang-fr">AC11.01 :</strong> <span class="lang-fr">Analyse fonctionnelle du thermomètre : amplification de la mesure, comparateurs de seuils (+5°C à +50°C) et affichage par 3 voyants.</span><span class="lang-en">Functional analysis of the thermometer: measurement amplification, threshold comparators and 3 indicator lights.</span></li>
+                        <li><strong class="lang-fr">AC11.02 :</strong> <span class="lang-fr">Réalisation d'un prototype : ajustement des ponts diviseurs de tension par maquettage et simulation Proteus.</span><span class="lang-en">Prototype building: tuning the voltage dividers through breadboarding and Proteus simulation.</span></li>
+                        <li><strong class="lang-fr">AC11.03 :</strong> <span class="lang-fr">Rédaction des documents de fabrication : plans mécaniques et typons du PCB double face (100x60mm).</span><span class="lang-en">Writing the manufacturing documents: mechanical drawings and double-sided PCB layout (100x60mm).</span></li>
                     </ul>
                 </div>
                 <div class="skill-box verifier">
-                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
+                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER (niveau 1)</h4>
                     <ul>
-                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Mise en œuvre d'une procédure d'essais métrologique rigoureuse en étuve thermique.</span><span class="lang-en">Execution of precise thermal chamber test scripts.</span></li>
-                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Ajustement et étalonnage des résistances pour caler les seuils d'alertes lumineuses (36°C et 39°C).</span><span class="lang-en">Calibrating resistors to adjust precise status indicators.</span></li>
+                        <li><strong class="lang-fr">AC12.01 :</strong> <span class="lang-fr">Application d'une procédure d'essais métrologiques en étuve thermique.</span><span class="lang-en">Applying a metrological test procedure in a thermal chamber.</span></li>
+                        <li><strong class="lang-fr">AC12.02 :</strong> <span class="lang-fr">Identification des écarts sur les seuils d'alerte lumineuse (36°C et 39°C) et ajustement des résistances pour l'étalonnage.</span><span class="lang-en">Identifying deviations on the light alert thresholds (36°C and 39°C) and adjusting resistors for calibration.</span></li>
+                    </ul>
+                </div>
+                <div class="skill-box manager">
+                    <h4><i class="fa-solid fa-users-gear"></i> Rôle MANAGER : chef d'équipe</h4>
+                    <ul>
+                        <li><span class="lang-fr">Coordination du groupe sur toute la durée du projet (40 h).</span><span class="lang-en">Coordinating the team throughout the project (40 h).</span></li>
+                        <li><span class="lang-fr">Répartition des blocs de tâches et planification globale dès le lancement.</span><span class="lang-en">Distributing task blocks and building the overall schedule from the kickoff.</span></li>
+                        <li><span class="lang-fr">Suivi de l'avancement et du budget (&lt; 20 €), mise à jour du planning à chaque séance.</span><span class="lang-en">Tracking progress and budget (&lt; 20 €), updating the schedule at every session.</span></li>
+                        <li><span class="lang-fr">Animation des points d'équipe et préparation de la soutenance.</span><span class="lang-en">Leading team check-ins and preparing the final defense.</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="modal-images">
+                <img src="images/aresTDB.jpg" alt="Routage ARES du thermomètre">
                 <img src="images/verification thermometre.png" alt="Schéma Thermomètre">
-                <img src="images/verification thermometre 2.jpg" alt="Routage Thermomètre">
             </div>
             <h3>Cahier des Charges</h3>
             <p class="lang-fr">Concevoir une carte électronique étanche basse consommation d'un thermomètre de bain médical grand public.</p>
@@ -561,18 +607,17 @@
 
             <div class="skills-container">
                 <div class="skill-box concevoir">
-                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
+                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR (niveau 1)</h4>
                     <ul>
-                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Traduction du besoin prothétique médical en grandeurs physiques et angles de servomoteurs.</span><span class="lang-en">Converting anatomical needs into operational control coordinates.</span></li>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Développement sous CATIA des architectures géométriques des phalanges articulées.</span><span class="lang-en">Modeling mechanical finger segments inside advanced CAD solutions.</span></li>
-                        <li><strong class="lang-fr">C.3 :</strong> <span class="lang-fr">Validation et correction des formes par impression 3D successive de maquettes d'études.</span><span class="lang-en">Validating shapes through sequential structural printing.</span></li>
+                        <li><strong class="lang-fr">AC11.01 :</strong> <span class="lang-fr">Analyse fonctionnelle du besoin prothétique médical : traduction en grandeurs physiques et angles de servomoteurs.</span><span class="lang-en">Functional analysis of the prosthetic need: converting it into physical quantities and servo angles.</span></li>
+                        <li><strong class="lang-fr">AC11.02 :</strong> <span class="lang-fr">Réalisation d'un prototype : modélisation des phalanges articulées sous CATIA et validation des formes par impressions 3D successives.</span><span class="lang-en">Prototype building: modeling the articulated fingers in CATIA and validating shapes through successive 3D prints.</span></li>
                     </ul>
                 </div>
                 <div class="skill-box verifier">
-                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
+                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER (niveau 1)</h4>
                     <ul>
-                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Élaboration du protocole d'acquisition et filtrage logiciel des signaux myoélectriques.</span><span class="lang-en">Drafting biometric signal capture and software digital filter test steps.</span></li>
-                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Campagne de tests d'ajustement réels des capteurs sur l'avant-bras et calibration fine de la réactivité des doigts.</span><span class="lang-en">Testing sensors on forearm to fix target motion tracking errors.</span></li>
+                        <li><strong class="lang-fr">AC12.01 :</strong> <span class="lang-fr">Application d'un protocole d'acquisition et de filtrage logiciel des signaux myoélectriques.</span><span class="lang-en">Applying a protocol for acquiring and digitally filtering myoelectric signals.</span></li>
+                        <li><strong class="lang-fr">AC12.02 :</strong> <span class="lang-fr">Identification des écarts lors des tests des capteurs sur l'avant-bras et calibration de la réactivité des doigts.</span><span class="lang-en">Identifying deviations during sensor tests on the forearm and calibrating finger responsiveness.</span></li>
                     </ul>
                 </div>
             </div>
@@ -653,34 +698,40 @@
     <div id="modal-tss-s3" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('modal-tss-s3')">&times;</button>
-            <h2>Projet Exosquelette & Signaux - DU TSS (Semestre 3, encadrement M. Morin)</h2>
+            <h2>Projet Exosquelette & Signaux - DU TSS (Semestre 3)</h2>
 
             <p class="lang-fr info-banner"><strong>Période :</strong> Projet réalisé durant le <strong>semestre 3</strong>.</p>
             <p class="lang-en info-banner"><strong>Period:</strong> Project carried out during <strong>semester 3</strong>.</p>
 
             <div class="skills-container">
                 <div class="skill-box concevoir">
-                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR</h4>
+                    <h4><i class="fa-solid fa-compass-drafting"></i> Compétence CONCEVOIR (niveau 1)</h4>
                     <ul>
-                        <li><strong class="lang-fr">C.1 :</strong> <span class="lang-fr">Étude et conception fonctionnelle orientée vers les exosquelettes et l'assistance gestuelle.</span></li>
-                        <li><strong class="lang-fr">C.2 :</strong> <span class="lang-fr">Modélisation géométrique et intégration de structures articulées (CATIA).</span></li>
+                        <li><strong class="lang-fr">AC11.01 :</strong> <span class="lang-fr">Analyse fonctionnelle orientée vers les exosquelettes et l'assistance gestuelle.</span></li>
+                        <li><strong class="lang-fr">AC11.02 :</strong> <span class="lang-fr">Modélisation géométrique de structures articulées sous CATIA.</span></li>
                     </ul>
                 </div>
                 <div class="skill-box verifier">
-                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER</h4>
+                    <h4><i class="fa-solid fa-list-check"></i> Compétence VÉRIFIER (niveau 1)</h4>
                     <ul>
-                        <li><strong class="lang-fr">V.1 :</strong> <span class="lang-fr">Analyse des signaux électrophysiologiques et de la contraction musculaire.</span></li>
-                        <li><strong class="lang-fr">V.2 :</strong> <span class="lang-fr">Étude des réponses physiologiques et du système cardiovasculaire appliqués à l'effort.</span></li>
+                        <li><strong class="lang-fr">AC12.01 :</strong> <span class="lang-fr">Application de mesures et d'essais : signaux électrophysiologiques, contraction musculaire et réponse cardiovasculaire à l'effort.</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="modal-images">
-                <img src="images/exosquelette.jpg" alt="Exosquelette">
+                <figure>
+                    <img src="images/exosquelette.jpg" alt="Exosquelette">
+                </figure>
+                <figure>
+                    <img src="images/sortiedusante.jpg" alt="Sortie à la Polyclinique Bordeaux Nord Aquitaine">
+                    <figcaption class="lang-fr">Sortie à la Polyclinique Bordeaux Nord Aquitaine : une visite en milieu hospitalier qui relie le projet du DU TSS au monde de la santé.</figcaption>
+                    <figcaption class="lang-en">Visit to the Polyclinique Bordeaux Nord Aquitaine: a hospital visit linking the DU TSS project to the healthcare world.</figcaption>
+                </figure>
             </div>
 
             <h3>Présentation du Projet & Axes d'Étude</h3>
-            <p class="lang-fr">Projet interdisciplinaire (DU TSS) encadré par M. Morin, axé sur l'interaction homme-machine à travers l'étude des exosquelettes et de la physiologie humaine.</p>
+            <p class="lang-fr">Projet interdisciplinaire (DU TSS), axé sur l'interaction homme-machine à travers l'étude des exosquelettes et de la physiologie humaine.</p>
 
             <ul class="req-list">
                 <li>
